@@ -32,8 +32,11 @@ input{
     border-radius:5px;
     border:none;
 }
-input[type=text], input[type=email], input[type=number], input[type=password]{
+input[type=email], input[type=number], input[type=password]{
     width:90%;
+}
+input[type=text]{
+    width:38%;
 }
 input[type=submit]{
     width:95%;
@@ -50,13 +53,14 @@ select{
     padding:10px;
     width:32%;
     border-radius:5px;
-} 
+}
 </style>
 <body>
 <div class ="wrap">
      <form>
          <h2> SignUp </h2>
-         <input type ="text" name ="your name" placeholder="Your Name">
+         <input type ="text" name ="First Name" placeholder="First Name">
+         <input type ="text" name ="Last Name" placeholder="Last Name">
          <input type ="email" name ="email" placeholder ="Your Email">
          <input type ="number" name ="mobilenumber" placeholder ="Mobile Number">
          <input type ="password" name ="password" placeholder ="Password">
@@ -70,8 +74,16 @@ select{
 
          <select name ="month">
              <option> Month</option>
-             <option value ="january"> January</option>
-             <option value ="february"> February</option>
+             <option value ="January"> January</option>
+             <option value ="February"> February</option>
+             <option value ="March"> March</option>
+             <option value ="April"> April</option>
+             <option value ="May"> May</option>
+             <option value ="June"> June</option>
+             <option value ="July"> July</option>
+             <option value ="August"> August</option>
+             <option value ="Septempber"> Semtempber</option>
+             <option value ="October"> October</option>
          </select>
 
          <select name ="day">
@@ -89,6 +101,7 @@ select{
 	 <br>
 	 <input type ="radio" name ="male" value ="male"> Male
 	 <input type ="radio" name ="female" value ="female"> Female
+   <input type ="radio" name ="others" value ="others"> Others
          <br>
          <input type ="checkbox"> I agree to the terms of use
 	 <br>
