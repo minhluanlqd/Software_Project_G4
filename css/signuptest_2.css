@@ -1,7 +1,8 @@
 body{
   margin: 0;
   padding: 0;
-  background: url(https://i.ytimg.com/vi/2yKsDZrEF7U/maxresdefault.jpg);
+  background: url(https://i.ytimg.com/vi/2yKsDZrEF7U/maxresdefault.jpg) no-repeat;
+  background-size: cover;
   font-family: 'Righteous', cursive;
 }
 .sign-up-box{
