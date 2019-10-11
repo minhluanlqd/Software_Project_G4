@@ -1,3 +1,47 @@
+
 #page1 {
-  background: url(https://i.ytimg.com/vi/2yKsDZrEF7U/maxresdefault.jpg);
+  background: url(https://i.ytimg.com/vi/2yKsDZrEF7U/maxresdefault.jpg) no-repeat;
+  background-size: cover;
 }
+#Header{
+font-size:50px; text-shadow:3px 3px black;
+overflow:hidden;
+color:rgba(255,255,255,0.8);
+animation: typing-1 5s steps(500, end) infinite , blink-caret .65s step-end infinite;
+white-space: nowrap;
+ border-right: .15em solid white;
+ width:680px;
+ height: 70px;
+ position:absolute;
+ left:50%;
+ top:50%;
+ transform:translate(-50%);
+ text-align:right;
+}
+@keyframes typing-1 {
+
+ 0% { width: 0 }
+  50%{
+    width:680px;
+  }
+  60%{
+    width:680px;
+  }
+  70%{
+    width:680px;
+  }
+  80%{
+    width:680px;
+  }
+  90%{
+    width:680px;
+  }
+  100%{width:0}
+
+  }
+
+ 
+   @keyframes blink-caret {
+   from, to { border-color: white }
+    50% { border-color: transparent; }
+   }
