@@ -116,33 +116,6 @@ h2 span {
 	margin:0 0 5px 0;
 	padding:15px 15px 15px 20px;
 }
-#page1 .quote {margin:0 30px 5px 30px;padding:15px 15px 15px 10px;color:#2b2b2b;}
-	.quote:after {
-		position:absolute;
-		content:"";
-		display:block;
-		background:url(../images/quote-marker.png) no-repeat 0 0;
-		width:16px;
-		height:17px;
-		right:12px;
-		bottom:-17px;
-	}
-	.quote .inner:before {
-		display:inline-block;
-		background:url(../images/quote-before.png) no-repeat 0 0;
-		content:"";
-		width:14px;
-		height:11px;
-		margin:2px 3px 0 0;
-	}
-	.quote .inner:after {
-		display:inline-block;
-		background:url(../images/quote-after.png) no-repeat 0 0;
-		content:"";
-		width:14px;
-		height:11px;
-		margin:2px 0 0 3px;
-	}
 
 .def-list-1 dt {
 	display:block;
@@ -164,9 +137,9 @@ h2 span {
 	margin:0 0 18px 0;
 }
 /*----- boxes -----*/
-figure img {
+/* figure img {
 	border:1px solid #dedede;
-}
+} */
 /*----- indents -----*/
 .img-indent {
 	float:left;
