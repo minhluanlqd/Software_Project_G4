@@ -11,122 +11,147 @@
     <script src="js/superfish.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/jquery.cycle.all.min.js"></script>
-
 </head>
-
 <body id="page1">
   <div id = "Header" class="head-1"><br>WELCOME TO RU PARKING</div>
 
   <!-- Header -->
-  <header>
-  	<div class="inner">
-  		<h1 class="logo"><img src="images/logo_2.png" alt="Cannot show"></h1>
+  <header class="header">
+  	<div class="container">
+	  		<div class="logo"><img src="images/logo_2.png" alt="Cannot show" ></div>
+		  		<ul class="sf-menu menus">
+		  			<li class="current"><a href="home.html">Home</a></li>
+		  			<li><a href="">Account</a>
+		  				<ul>
+		  				<li><a href="signuptest_2.html">Sign Up</a></li>
+		  				<li><a href="sign_in_2.html">Sign In</a></li>
+		  				<li><a href="#">Account Info</a>
+		  					<ul>
+		  					<li><a href="#">Edit Account</a></li>
+		  					<li><a href="#">Delete Account</a></li>
+		  					</ul>
+		  				</li>
+		  				<li><a href="">Log Out</a></li>
+		  				</ul>
+		  			</li>
+		  			<li><a href="">Reserve</a>
+		  				<ul>
+		  				<li><a href="Reservation.html">Create a Reservation</a></li>
+		  				<li><a href="Reservation.html">Edit Reservation</a></li>
+		  				<li><a href="Reservation.html">Delete Reservation</a></li>
+              <li><a href="payment.html">Make Payment</a></li>
+		  				</ul></li>
+		  			<li><a href="">Contact Us</a></li>
+		  			<li><a href="">About</a></li>
+		  		</ul>
+		  		<div class="clear"></div>
   	</div>
-  	<nav>
-  		<ul class="sf-menu">
-  			<li class="current"><a href="home.html">Home</a></li>
-  			<li><a href="">Account</a>
-  				<ul>
-  				<li><a href="signuptest_2.html">Sign Up</a></li>
-  				<li><a href="sign_in_2.html">Sign In</a></li>
-  				<li><a href="#">Account Info</a>
-  					<ul>
-  					<li><a href="#">Edit Account</a></li>
-  					<li><a href="#">Delete Account</a></li>
-  					</ul></li>
-  				<li><a href="">Log Out</a></li>
-  				</ul></li>
-  			<li><a href="">Reserve</a>
-  				<ul>
-  				<li><a href="Reservation.html">Create a Reservation</a></li>
-  				<li><a href="Reservation.html">Edit Reservation</a></li>
-  				<li><a href="Reservation.html">Delete Reservation</a></li>
-  				</ul></li>
-  			<li><a href="">Contact Us</a></li>
-  			<li><a href="">About</a></li>
-  		</ul>
-  		<div class="clear"></div>
-  	</nav>
-
-  	<!-- <div class="slider-container">
-  		<div class="mp-slider">
-  			<div><img src="images/slide-3.png" alt=""></div>
-  			<div><img src="images/slide-2.png" alt=""></div>
-  			<div><img src="images/slide-1.png" alt=""></div>
-  		</div>
-  	</div> -->
   </header>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<div class="list">
+	<div class="container1">
+	<ul  class="listul">
+		<li class="b1">
+			<a href="Reservation.html">
+				<img src="images/pags-active.png">
+				<p>Reserve</p>
+			</a>
+		</li>
+		<li  class="b2">
+			<a href="signuptest_2.html">
+				<img src="images/pags-active.png">
+				<p>Sign Up</p>
+			</a>
+		</li>
+		<li  class="b3">
+			<a href="sign_in_2.html">
+				<img src="images/pags-active.png">
+				<p>Sign In</p>
+			</a>
+		</li>
+	</ul>
+	</div>
+</div>
+
 
 
 <!-- Content -->
-<section id="content"><div class="ic"></div>
+<section id="content">
 	<div class="container_24">
 		<div class="grid_24 content-border">
-			<div class="top-content-box">
-				<ul id="mp-pags-cont-extra">
-					<li><a href="Reservation.html">Reserve</a></li>
-					<li><a href="signuptest_2.html">Sign Up</a></li>
-					<li><a href="sign_in_2.html">Sign In</a></li>
-				</ul>
-			</div>
 			<div class="top-row">
 				<h1 class="aligncenter">
 					We are here to help you <br/>fit right in.
 				</h1>
-				<div class="wrapper">
-					<div class="grid_5 prefix_1 alpha">
-						<div class="wrapper">
-							<span class="dropcap color-1">A.</span>
-							<div class="extra-wrap">
-								<strong class="str-1 color-1">
-									Reserve:<br/>
-									Guarantee your spot when you arrive by reserving now
-								</strong>
-							</div>
-						</div>
-					</div>
-					<div class="grid_5">
-						<div class="wrapper">
-							<span class="dropcap color-2">B.</span>
-							<div class="extra-wrap">
-								<strong class="str-1 color-2">
-									Register:<br/>
-									Register an account to make reservations faster and easier
-								</strong>
-							</div>
-						</div>
-					</div>
-					<div class="grid_5 suffix_1 omega">
-						<div class="wrapper">
-							<span class="dropcap color-3">C.</span>
-							<div class="extra-wrap">
-								<strong class="str-1 color-3">
-									Log-in:<br/>
-									Log into your account to edit your profile or reserve a spot
-								</strong>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="wrapper indent-top">
-				<!-- <h2 id="Welcome"><center>Welcome to RU Parking Garages!</center></h2> -->
-				<center><strong>
-Our parking garage is state of the art in automation and convience. When you arrive to our garage you will<br />
-be greeted by a valet that will acquire your information through a license scanner and license plate reader.<br />
-After your information is taken, the valet will then take your car and will give you a ticket. When you<br />
-return to the garage, the valet will verify you ticket, and retrieve you car promptly due to a maximized<br />
-parking method implemented by our garge. Thank you for choosing RU Parking, where your car is our care.<br />
-				</strong></center>
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
 </section>
+<!--3 pic-->
+
+    <div class="big_container_for_picture">
+      <div class="container_for_picture">
+          <div class="container_for_picture_1">
+            <img src="images\church_street_deck.jpg" alt="Cannot show" width="200" height="200" >
+          </div>
+          <div class="container_for_picture_2">
+            <a href="https://www.google.com/maps/place/Lower+Church+Street+Deck/@40.4957113,-74.4432165,15z/data=!4m5!3m4!1s0x0:0xe9d8a2868241b0c4!8m2!3d40.4957113!4d-74.4432165">
+            <img src="images\lower-church-street-deck-map.png" alt="Cannot show" width="200" height="200" >
+            </a>
+            <div class="content-container_for_picture">
+              <h2>Lower Church Street Deck</h2>
+              <li><a href="https://www.njnbpa.org/parking-info/parking-rates/">90 Church St, New Brunswick, NJ 08901</a></li>
+            </div>
+        </div>
+      </div>
+      <div class="container_for_picture">
+          <div class="container_for_picture_1">
+            <img src="images\moris-street-deck.png" alt="Cannot show" width="200" height="200" >
+          </div>
+          <div class="container_for_picture_2">
+            <a href="https://www.google.com/maps/place/70+New+St,+New+Brunswick,+NJ+08901/@40.4917822,-74.4463648,16.74z/data=!4m5!3m4!1s0x89c3c65a799e53a5:0x955e8915c9e8b29f!8m2!3d40.4920074!4d-74.44355">
+            <img src="images\morris-street-deck-map.png" alt="Cannot show" width="200" height="200" >
+            </a>
+            <div class="content-container_for_picture">
+              <h2>Moris Street Deck</h2>
+              <li><a href="https://www.njnbpa.org/parking-info/parking-rates/">70 New St New Brunswick, NJ 08901</a></li>
+            </div>
+        </div>
+      </div>
+      <div class="container_for_picture">
+          <div class="container_for_picture_1">
+            <img src="images\edison-station-parking-lot-3.png" alt="Cannot show" width="200" height="200" >
+          </div>
+          <div class="container_for_picture_2">
+            <a href="https://www.google.com/maps?rlz=1C1CHBF_enVN854VN854&biw=1536&bih=711&sxsrf=ACYBGNSFtQiv8Q-L5qPuDFM3JQN1lPNgoQ:1572202993873&q=Edison+Station+Parking+Lot+3&uact=5&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjMpJGUkb3lAhWRmeAKHbDdDacQ_AUIEigB">
+            <img src="images\edison-station-parking-lot-3-map.png" alt="Cannot show" width="200" height="200" >
+            </a>
+            <div class="content-container_for_picture">
+              <h2>Edison Station Parking Lot 3</h2>
+              <li><a href="http://www.parkamerica.net/">Kilmer Rd, Edison, NJ 08817</a></li>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="wrapper indent-top">
+  <!-- <h2 id="Welcome"><center>Welcome to RU Parking Garages!</center></h2> -->
+  <center><strong>
+Our parking garage is state of the art in automation and convience. When you arrive to our garage you will<br />
+be greeted by a valet that will acquire your information through a license scanner and license plate reader.<br />
+After your information is taken, the valet will then take your car and will give you a ticket. When you<br />
+return to the garage, the valet will verify you ticket, and retrieve you car promptly due to a maximized<br />
+parking method implemented by our garge. Thank you for choosing RU Parking, where your car is our care.<br />
+  </strong></center>
+</div>
+
 
 
 <!-- Footer -->
+<div class="foot">
 <footer>
 	<div class="copyright">
 		&copy; 2019 <strong>RU Parking Garage</strong><!-- instert=>class="footer-logo"-->
@@ -137,6 +162,6 @@ parking method implemented by our garge. Thank you for choosing RU Parking, wher
 		<li><a href="#"><img src="images/social-link-3.jpg" alt=""></a></li>
 	</ul>
 </footer>
-
+</div>
 </body>
 </html>

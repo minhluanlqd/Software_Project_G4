@@ -25,6 +25,30 @@ body {
 	margin-right: auto;
 	width: 960px;
 }
+.big_container_for_picture{
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1260px;
+  min-height: 40vh;
+  font-family: 'Poppins', sans-serif;
+  grid-template-columns: 400px 400px 400px;
+  grid-column-gap: 30px;
+}
+.container_for_picture{
+  background-color: #253340;
+  display: grid;
+  text-align: center;
+  grid-gap: : 0px ;
+}
+.container_for_picture_1{
+  width: 400px;
+}
+.container_for_picture_2{
+  width: 400px;
+  display: flex;
+}
+
 
 /* Grid >> Global
 ----------------------------------------------------------------------------------------------------*/

@@ -10,7 +10,6 @@ body{
 	font-size: 12px;
 	line-height: 16px;
 }
-html,body{height:100%;}
 html {min-width:970px;}
 .ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
 /* Global Structure---------------------------------------- */
@@ -49,7 +48,7 @@ h1,h2,h3,h4,h5,h6{
 	font-weight:bold;
 	font-family: 'Open Sans', sans-serif;
 }
-h1{font-size:30px; line-height:35px; color:#007eff;padding:0 0 22px 0;}
+h1{font-size:30px; line-height:35px; color:#007eff;padding:20px 0 22px 0;}
 h2{font-size:30px; line-height:36px;}
 h3{font-size:27px; line-height:32px;}
 h4{font-size:24px; line-height:30px;}
@@ -266,12 +265,7 @@ header{
 	header .inner {
 		padding:35px 40px 20px 40px;
 	}
-.logo {
-	display:inline-block;
-	padding:0 !important;
-	position:relative;
-	z-index:99;
-}
+
 .logo a {
 	position: relative;
 	background: url(../images/logo.png) no-repeat 0 0;
@@ -302,11 +296,11 @@ header{
 
 #mp-pags-cont {display:none;}
 
-#mp-pags, #mp-pags-cont-extra {
+#mp-pags{
 	text-align:center;
 	margin-top:-77px;
 }
-	#mp-pags li, #mp-pags-cont-extra li {
+	#mp-pags li{
 		display:inline-block;
 		width:142px;
 		height:142px;
@@ -360,19 +354,13 @@ header{
 			color:#e87f2c;
 		}
 /********************** Navigation ************************/
-nav {
-	border:1px solid #dcdcdc;
-	padding:11px 0;
-}
+
 
 .sf-menu{
-	min-height:27px;
-	padding:0;
-	margin:0;
+
+
 	font-size:0;
-	line-height:0;
-	position:relative;
-	z-index:99;
+
 }
 .sf-menu ul{
 	position:absolute;
@@ -551,6 +539,19 @@ iframe {
 	margin:0 10px 0 0;
 	text-transform:uppercase;
 }
+.content-container_for_picture{
+
+}
+.content-container_for_picture h2{
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+	height: 100px;
+}
+.content-container_for_picture li{
+	font-size: 15px;
+	height: 100px;
+}
+
 /******************** Aside ******************/
 .aside-bg {
 	background:#e9e9e9;

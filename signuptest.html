@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> SignUp Form</title>
+<style>
+body{
+background:#323232;
+}
+.wrap{
+     width:350px;
+     margin:auto;
+     background:#00adee;
+     margin-top:50px;
+     padding:5px;
+}
+form{
+    padding:10px;
+    form-family:arial;
+    border:1px dotted white;
+    margin:10px;
+}
+h2{
+    text-align:center;
+    background:orange;
+    color:white;
+    padding:10px;
+    border-radius:10px
+}
+input{
+    padding:10px;
+    margin:5px;
+    border-radius:5px;
+    border:none;
+}
+input[type=email], input[type=number], input[type=password]{
+    width:90%;
+}
+input[type=text]{
+    width:38%;
+}
+input[type=submit]{
+    width:95%;
+    background:orange;
+    cursor:pointer;
+    font-size:18px
+    font-weight:bold;
+    color:white;
+}
+input[type=submit]:hover{
+    background:yellow;
+}
+select{
+    padding:10px;
+    width:32%;
+    border-radius:5px;
+}
+</style>
+<body>
+<div class ="wrap">
+     <form>
+         <h2> SignUp </h2>
+         <input type ="text" name ="First Name" placeholder="First Name">
+         <input type ="text" name ="Last Name" placeholder="Last Name">
+         <input type ="email" name ="email" placeholder ="Your Email">
+         <input type ="number" name ="mobilenumber" placeholder ="Mobile Number">
+         <input type ="password" name ="password" placeholder ="Password">
+         <input type ="password" name ="confirmpassword" placeholder ="Confirm Password">
+         <input type ="address" name ="address" placeholder ="Address">
+	 <input type ="drivinglicensenumber" name ="drivinglicensenumber" placeholder ="DL Number">
+         <br>
+	 <br>
+	 <span style ="font-size:18px;"> Date of Birth</span>
+         <br>
+
+         <select name ="month">
+             <option> Month</option>
+             <option value ="January"> January</option>
+             <option value ="February"> February</option>
+             <option value ="March"> March</option>
+             <option value ="April"> April</option>
+             <option value ="May"> May</option>
+             <option value ="June"> June</option>
+             <option value ="July"> July</option>
+             <option value ="August"> August</option>
+             <option value ="Septempber"> Semtempber</option>
+             <option value ="October"> October</option>
+         </select>
+
+         <select name ="day">
+             <option> Day</option>
+             <option value ="1"> 1</option>
+             <option value ="2"> 2</option>
+         </select>
+
+         <select name ="year">
+             <option> Year</option>
+             <option value ="2000"> 2000</option>
+             <option value ="1999"> 1990</option>
+         </select>
+	 <br>
+	 <br>
+	 <input type ="radio" name ="male" value ="male"> Male
+	 <input type ="radio" name ="female" value ="female"> Female
+   <input type ="radio" name ="others" value ="others"> Others
+         <br>
+         <input type ="checkbox"> I agree to the terms of use
+	 <br>
+	 <input type ="submit" value ="Submit Now">
+     </form>
+</div>
+</body>
+</html>
