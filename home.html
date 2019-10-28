@@ -11,65 +11,75 @@
     <script src="js/superfish.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/jquery.cycle.all.min.js"></script>
-
 </head>
-
 <body id="page1">
   <div id = "Header" class="head-1"><br>WELCOME TO RU PARKING</div>
 
   <!-- Header -->
-  <header>
-  	<div class="inner">
-  		<h1 class="logo"><img src="images/logo_2.png" alt="Cannot show"></h1>
+  <header class="header">
+  	<div class="container">	 
+	  		<div class="logo"><img src="images/logo_2.png" alt="Cannot show" ></div>
+		  		<ul class="sf-menu menus">
+		  			<li class="current"><a href="home.html">Home</a></li>
+		  			<li><a href="">Account</a>
+		  				<ul>
+		  				<li><a href="signuptest_2.html">Sign Up</a></li>
+		  				<li><a href="sign_in_2.html">Sign In</a></li>
+		  				<li><a href="#">Account Info</a>
+		  					<ul>
+		  					<li><a href="#">Edit Account</a></li>
+		  					<li><a href="#">Delete Account</a></li>
+		  					</ul>
+		  				</li>
+		  				<li><a href="">Log Out</a></li>
+		  				</ul>
+		  			</li>
+		  			<li><a href="">Reserve</a>
+		  				<ul>
+		  				<li><a href="Reservation.html">Create a Reservation</a></li>
+		  				<li><a href="Reservation.html">Edit Reservation</a></li>
+		  				<li><a href="Reservation.html">Delete Reservation</a></li>
+		  				</ul></li>
+		  			<li><a href="">Contact Us</a></li>
+		  			<li><a href="">About</a></li>
+		  		</ul>
+		  		<div class="clear"></div>
   	</div>
-  	<nav>
-  		<ul class="sf-menu">
-  			<li class="current"><a href="home.html">Home</a></li>
-  			<li><a href="">Account</a>
-  				<ul>
-  				<li><a href="signuptest_2.html">Sign Up</a></li>
-  				<li><a href="sign_in_2.html">Sign In</a></li>
-  				<li><a href="#">Account Info</a>
-  					<ul>
-  					<li><a href="#">Edit Account</a></li>
-  					<li><a href="#">Delete Account</a></li>
-  					</ul></li>
-  				<li><a href="">Log Out</a></li>
-  				</ul></li>
-  			<li><a href="">Reserve</a>
-  				<ul>
-  				<li><a href="Reservation.html">Create a Reservation</a></li>
-  				<li><a href="Reservation.html">Edit Reservation</a></li>
-  				<li><a href="Reservation.html">Delete Reservation</a></li>
-  				</ul></li>
-  			<li><a href="">Contact Us</a></li>
-  			<li><a href="">About</a></li>
-  		</ul>
-  		<div class="clear"></div>
-  	</nav>
-
-  	<!-- <div class="slider-container">
-  		<div class="mp-slider">
-  			<div><img src="images/slide-3.png" alt=""></div>
-  			<div><img src="images/slide-2.png" alt=""></div>
-  			<div><img src="images/slide-1.png" alt=""></div>
-  		</div>
-  	</div> -->
   </header>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<div class="list">
+	<div class="container1">
+	<ul  class="listul">
+		<li class="b1">
+			<a href="Reservation.html">
+				<img src="images/pags-active.png">
+				<p>Reserve</p>
+			</a>
+		</li>
+		<li  class="b2">
+			<a href="signuptest_2.html">
+				<img src="images/pags-active.png">
+				<p>Sign Up</p>
+			</a>
+		</li>
+		<li  class="b3">
+			<a href="sign_in_2.html">
+				<img src="images/pags-active.png">
+				<p>Sign In</p>
+			</a>
+		</li>
+	</ul>
+	</div>
+</div>
+
 
 
 <!-- Content -->
-<section id="content"><div class="ic"></div>
+<section id="content">
 	<div class="container_24">
 		<div class="grid_24 content-border">
-			<div class="top-content-box">
-				<ul id="mp-pags-cont-extra">
-					<li><a href="Reservation.html">Reserve</a></li>
-					<li><a href="signuptest_2.html">Sign Up</a></li>
-					<li><a href="sign_in_2.html">Sign In</a></li>
-				</ul>
-			</div>
+			
 			<div class="top-row">
 				<h1 class="aligncenter">
 					We are here to help you <br/>fit right in.
@@ -127,6 +137,7 @@ parking method implemented by our garge. Thank you for choosing RU Parking, wher
 
 
 <!-- Footer -->
+<div class="foot">
 <footer>
 	<div class="copyright">
 		&copy; 2019 <strong>RU Parking Garage</strong><!-- instert=>class="footer-logo"-->
@@ -137,6 +148,6 @@ parking method implemented by our garge. Thank you for choosing RU Parking, wher
 		<li><a href="#"><img src="images/social-link-3.jpg" alt=""></a></li>
 	</ul>
 </footer>
-
+</div>
 </body>
 </html>
