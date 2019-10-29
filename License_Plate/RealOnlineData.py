@@ -10,5 +10,10 @@ Car_stolen_list=soup.find_all(class_='col-sm-6')
 for car in Car_stolen_list[1:]:
     c=car.get_text()
     items=c.split()
-    license_plate.append(items[4])
+    if ((items[4]=='Plate:')):
+        license_plate.append(items[5])
+    elif (items[4]=='TEMPORARY'):
+        pass        
+    else:
+        license_plate.append(items[4])
 print (license_plate)
