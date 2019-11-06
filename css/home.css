@@ -1,7 +1,8 @@
-
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 #page1 {
   background: url(https://i.ytimg.com/vi/2yKsDZrEF7U/maxresdefault.jpg) no-repeat;
   background-size: cover;
+  font-family: 'Righteous', cursive;
 }
 #Header{
 font-size:50px; text-shadow:3px 3px black;
@@ -40,7 +41,7 @@ white-space: nowrap;
 
   }
 
- 
+
    @keyframes blink-caret {
    from, to { border-color: white }
     50% { border-color: transparent; }
@@ -119,7 +120,7 @@ white-space: nowrap;
 }
 .listul li img{
   margin-top:40px;
-  
+
 }
 .listul li:hover img{
 
@@ -148,3 +149,66 @@ white-space: nowrap;
   width: 950px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 1280px) {
+    .header{
+      display: none;
+    }
+}
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    /* background:rgba(0,0,0,.4); */
+    cursor:pointer;
+    display:none;
+    /* height:100%; */
+    position:absolute;
+    text-align:center;
+    top:350px;
+    left: 100px;
+    width:50%;
+    z-index:10000;
+}
+.hover_bkgr_fricc > div {
+    /* background-color: #01b9ff; */
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: fixed;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #f00;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 4px;
+    display: inline-block;
+    font-weight: bold;
+}
+/* Popup box BEGIN */
