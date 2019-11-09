@@ -19,7 +19,7 @@ body{
 .sign-up-box h1{
   float: left;
   font-size: 40px;
-  border-bottom: 6px solid #4caf50;
+  border-bottom: 6px solid  #01b9ff;
   /* margin-bottom: 50px;
   padding: 13px 0; */
 }
@@ -30,7 +30,7 @@ body{
   font-size: 20px;
   padding: 5px 0;
   margin: 5px 0;
-  border-bottom: 2px solid #4caf50;
+  border-bottom: 2px solid  #01b9ff;
 }
 .textbox input{
   border: none;
@@ -53,7 +53,7 @@ body{
 .btn{
   width: 100%;
   background: none;
-  border: 2px solid #4caf50;
+  border: 2px solid  #01b9ff;
   color: white;
   padding: 5px;
   font-size: 18px;
