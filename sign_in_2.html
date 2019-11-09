@@ -2,25 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="css/sign_in_2.css">
   </head>
-  <body>
-<div class="login-box">
-  <h1>Sign In</h1>
-  <form>
-    <div class="textbox">
-      <i class="fas fa-user"></i>
-      <input type="text" placeholder="Username" required>
+<body>
+
+  <div class="login-box">
+    <h1>Sign In</h1>
+    <form method="POST">
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" required>
+      </div>
+
+      <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <input type="submit" class="btn" value="Sign in">
+    </form>
+
+    <div class="controls">
+      <button class="Button-link">
+        <a href="signuptest_2.html" class="Button-link">No account yet? Register Instantly</a>
+      </button>
     </div>
 
-    <div class="textbox">
-      <i class="fas fa-lock"></i>
-      <input type="password" placeholder="Password" required>
-    </div>
+  </div>
 
-    <input type="submit" class="btn" value="Sign in">
-  </form>
-</div>
-  </body>
+</body>
 </html>
