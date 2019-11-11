@@ -10,6 +10,7 @@
   <!-- <link rel="icon" href="../../favicon.ico"> -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <title>RU Parking</title>
 
@@ -57,14 +58,9 @@
           <form method = 'POST' action = '/reservation/create'>
             <br><h3 class="firstline">Time & Date:</h3>
             <input name="datefield" type='datetime-local'><br><br>
-
-            <!-- Parking Spot Number:<br> -->
-            <input name="spotID" type = "number" placeholder="Spot Number" required><br>
-            <input type ="number" name ="mobilenumber" placeholder ="Mobile Number" required><br>
-            <input type ="number" name ="creditnum" placeholder ="Credit Card Number" required><br>
-            <input type ="number" name ="cvv" placeholder ="CVV" required><br><br>
-            <input class="btn btn-primary" type = 'submit' value = 'Create Reservation' name = 'makeRes'><br><br>
+            
             <a href="index.html"><input class="btn btn-primary" type = 'button' value = 'Log out' name = 'logout'></a>
+
           </form>
       </td>
       <td>
