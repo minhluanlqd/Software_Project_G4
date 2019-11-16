@@ -42,7 +42,6 @@ body{
   float: left;
   margin: 0 5px;
 }
-
 .option-input{
   width: 100%;
   overflow: hidden;
@@ -66,3 +65,9 @@ select {
     width: 32%;
     border-radius: 5px;
 }
+.inputfield {
+    font-size:large !important;
+    height: 50px !important;
+    border-radius: 5px;
+}
+
