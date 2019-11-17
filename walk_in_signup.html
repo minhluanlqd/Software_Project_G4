@@ -12,19 +12,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <title>RU Parking</title>
+  <title>Walk In Customer</title>
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
   <!-- Custom styles for this template -->
   <link href="css/ReservationForm.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/home.css"> -->
 
 </head>
 
 <body>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container">
 
         <img id="logo_2" src="images/logo_2.png" alt="Cannot show" >
@@ -33,8 +34,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="signuptest_2.html">Create account</a>
@@ -56,16 +57,51 @@
     <tr>
       <td>
           <form method = 'POST' action = '/reservation/create'>
-            <br><h3 class="firstline">Time & Date:</h3>
-            <input name="datefield" type='datetime-local'><br><br>
+            <br><h3 class="firstline">Start Time:</h3>
+            <input name="datefield" type='time' min="00:00" max="23:59" required><br><br>
+            <h3 class="firstline">End Time:</h3>
+            <input name="datefield" type='time' min="00:00" max="23:59" required><br><br>
 
             <!-- Parking Spot Number:<br> -->
-            <input name="spotID" type = "number" placeholder="Spot Number" required><br>
-            <input type ="number" name ="platenumber" placeholder ="Plate Number" required><br><br>
+            <input type ="text" name ="First Name" placeholder="First Name" required>
+            <input type ="text" name ="Last Name" placeholder="Last Name" required>
+            <input type ="email" name ="email" placeholder ="Your Email" required>
+            <input type ="text" name ="licensenumber" placeholder ="License Number" required><br><br>
             <input class="btn btn-primary" type = 'submit' value = 'Create Reservation' name = 'makeRes'><br><br>
-            <a href="index.html"><input class="btn btn-primary" type = 'button' value = 'Log out' name = 'logout'></a>
 
           </form>
+
+          <table class="tableprice">
+            <tr>
+              <th>Hour</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <td>00:00AM-04:00AM</td>
+              <td>2$/hour:small & medium <br> 5$/hour: large</td>
+            </tr>
+            <tr>
+              <td>04:00AM-08:00AM</td>
+              <td>2.5$/hour:small & medium <br> 5.5$/hour: large</td>
+            </tr>
+            <tr>
+              <td>08:00AM-12:00PM</td>
+              <td>3$/hour:small & medium <br> 6$/hour: large</td>
+            </tr>
+            <tr>
+              <td>12:00PM-16:00PM</td>
+              <td>3$/hour:small & medium <br> 6$/hour: large</td>
+            </tr>
+            <tr>
+              <td>16:00PM-20:00PM</td>
+              <td>2.75$/hour:small & medium <br> 5.25$/hour: large</td>
+            </tr>
+            <tr>
+              <td>20:00PM-00:00AM</td>
+              <td>2.25$/hour:small & medium <br> 4$/hour: large</td>
+            </tr>
+          </table>
+
       </td>
       <td>
           <svg width="640" height="520" id="mapGraphic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

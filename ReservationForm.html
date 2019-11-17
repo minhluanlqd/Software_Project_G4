@@ -10,20 +10,19 @@
   <!-- <link rel="icon" href="../../favicon.ico"> -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>RU Parking</title>
+  <link href="css/ReservationForm.css" rel="stylesheet">
+  <title>Create Reservation</title>
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
   <!-- Custom styles for this template -->
-  <link href="css/ReservationForm.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container">
 
         <img id="logo_2" src="images/logo_2.png" alt="Cannot show" >
@@ -32,11 +31,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="SuccessSignIn.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="signuptest_2.html">Create account</a>
+              <a class="nav-link" href="EditReservation.html">Edit Reservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CancelReservation.html">Cancel Reservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="payment.html">Payment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Log Out</a>
             </li>
           </ul>
         </div>
@@ -54,18 +62,46 @@
   <tbody>
     <tr>
       <td>
-          <form method = 'POST' action = '/reservation/create'>
-            <br><h3 class="firstline">Time & Date:</h3>
-            <input name="datefield" type='datetime-local'><br><br>
+          <form method = 'POST' action = 'reservation/create'>
+            <br><h3 class="firstline">Start Time:</h3>
+            <input name="datefield" type='time' min="00:00" max="23:59" required><br><br>
+            <h3 class="firstline">End Time:</h3>
+            <input name="datefield" type='time' min="00:00" max="23:59" required><br><br>
 
             <!-- Parking Spot Number:<br> -->
-            <input name="spotID" type = "number" placeholder="Spot Number" required><br>
-            <input type ="number" name ="mobilenumber" placeholder ="Mobile Number" required><br>
-            <input type ="number" name ="creditnum" placeholder ="Credit Card Number" required><br>
-            <input type ="number" name ="cvv" placeholder ="CVV" required><br><br>
+            <input name="licensenumber" type = "text" placeholder="License Number" required><br><br>
             <input class="btn btn-primary" type = 'submit' value = 'Create Reservation' name = 'makeRes'><br><br>
-            <a href="index.html"><input class="btn btn-primary" type = 'button' value = 'Log out' name = 'logout'></a>
           </form>
+          <table class="tableprice">
+            <tr>
+              <th>Hour</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <td>00:00AM-04:00AM</td>
+              <td>1$/hour:small & medium <br> 2.5$/hour: large</td>
+            </tr>
+            <tr>
+              <td>04:00AM-08:00AM</td>
+              <td>1.25$/hour:small & medium <br> 2.75$/hour: large</td>
+            </tr>
+            <tr>
+              <td>08:00AM-12:00PM</td>
+              <td>2$/hour:small & medium <br> 4$/hour: large</td>
+            </tr>
+            <tr>
+              <td>12:00PM-16:00PM</td>
+              <td>2$/hour:small & medium <br> 4$/hour: large</td>
+            </tr>
+            <tr>
+              <td>16:00PM-20:00PM</td>
+              <td>2$/hour:small & medium <br> 4$/hour: large</td>
+            </tr>
+            <tr>
+              <td>20:00PM-00:00AM</td>
+              <td>1.5$/hour:small & medium <br> 3.5$/hour: large</td>
+            </tr>
+          </table>
       </td>
       <td>
           <svg width="640" height="520" id="mapGraphic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
