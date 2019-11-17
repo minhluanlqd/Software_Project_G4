@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="css/signuptest_2.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="sign-up-box">
+      <h1>Sign Up</h1>
+
+      <form class="signupform"method="POST">
+          <div class="textbox">
+            <input type ="text" name ="First Name" placeholder="First Name" required>
+          </div>
+          <div class="textbox">
+            <input type ="text" name ="Last Name" placeholder="Last Name" required>
+          </div>
+            <div class="textbox">
+            <input type ="email" name ="email" placeholder ="Your Email" required>
+          </div>
+            <div class="textbox">
+            <input type ="number" name ="mobilenumber" placeholder ="Mobile Number" required>
+          </div>
+          <div class="textbox">
+            <input type ="text" name ="username" placeholder="User Name" required>
+          </div>
+            <div class="textbox">
+            <input type ="password" name ="password" placeholder ="Password" required>
+          </div>
+            <div class="textbox">
+            <input type ="password" name ="confirmpassword" placeholder ="Confirm Password" required>
+          </div>
+            <div class="textbox">
+            <input type ="address" name ="address" placeholder ="Address" required>
+          </div>
+          <div class="textbox">
+            <input type ="number" name ="creditnum" placeholder ="Credit Card Number" required>
+          </div>
+          <div class="textbox">
+            <input type ="number" name ="cvv" placeholder ="CVV" required>
+          </div>
+            <div class="textbox">
+            <input type ="number" name ="drivinglicensenumber" placeholder ="DL Number" required>
+          </div>
+
+    <br>
+    <span style ="font-size:28px;"> Date of Birth</span>
+          <br>
+          <div class="option-input">
+            <input name="datefield" type='date'>
+      <br>
+      <br>
+      <input type ="radio" name ="gender" value ="male"> Male
+      <input type ="radio" name ="gender" value ="female"> Female
+      <input type ="radio" name ="gender" value ="others"> Others
+            <br>
+            <input type ="checkbox"> I agree to the terms of use
+      <br>
+      <input class="btn" type ="submit" value ="Submit">
+          </div>
+
+      </form>
+
+    </div>
+
+  </body>
+</html>
