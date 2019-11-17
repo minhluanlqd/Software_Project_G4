@@ -196,4 +196,19 @@ white-space: nowrap;
     display: inline-block;
     font-weight: bold;
 }
-/* Popup box BEGIN */
+#sure{
+  color: yellow;
+}
+.cancelsuccess button{
+  margin-left: 50px;
+}
+.cancelsuccess{
+  position: absolute;
+  margin-left: 550px;
+  margin-top: 250px;
+  color: yellow;
+  font-size: 20px;
+}
+/* .cancelsuccess p{
+  color: yellow;
+} */
