@@ -60,27 +60,7 @@ app.get('/sign_in_2.html',function(req,res)
 })
 app.post('/sign_in_2.html',urlencodedParser,function(req,res){
   console.log(req.body)
-  // make connection with database
-  //open
-  /*MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    console.log("database connected");
-    //mydb= table
-    var dbo = db.db("mydb");
-    //insert
-    // customers = collection
-    dbo.collection("customers").find({username: req.body.username, password: req.body.password}, function(err, res) {
-      if (err) throw err;
-      console.log(res._id);
-      if(res != null)
-      console.log("Sign in success");
-      else
-      console.log("failed");
-      // close
-      db.close();
-      console.log("database closed");
-    });
-  });*/
+  
   myDB.findUserName(req.body);
   res.sendFile(__dirname+'/index.html');
   
