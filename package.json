@@ -1,0 +1,16 @@
+{
+  "name": "software_project_g4-master",
+  "version": "1.0.0",
+  "description": "https://minhluanlqd.github.io/Software_Project_G4/",
+  "main": "GetData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.4"
+  }
+}
