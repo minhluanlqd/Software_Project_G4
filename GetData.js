@@ -24,7 +24,7 @@ app.get('/Index.html',function(req,res)
 
 app.get('/',function(req,res)
 {
-  res.sendFile(__dirname+'/index.html');
+  res.sendFile(__dirname+'/Index.html');
 })
 
 app.get('/Index.html',function(req,res)
