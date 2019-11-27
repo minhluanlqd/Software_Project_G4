@@ -49,7 +49,7 @@ app.get('/SignIn.html',function(req,res)
 {
   res.sendFile(__dirname+'/SignIn.html');
 })
-app.post('/SucessSignIn.html',urlencodedParser,function(req,res){
+app.post('/SignIn.html',urlencodedParser,function(req,res){
   console.log(req.body)
   res.sendFile(__dirname+'/SuccessSignIn.html');
 })
