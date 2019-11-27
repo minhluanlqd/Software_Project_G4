@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Home</title>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+      <script src="js/home.js"></script>
+      <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+      <script src="js/superfish.js"></script>
+      <script src="js/jquery.easing.1.3.js"></script>
+      <script src="js/jquery.cycle.all.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body id="page1">
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto d-flex  align-items-center">
+					<a class="mx-3" href="Index.html">
+						<div class="logo"><img src="images/logo_2.png"></div>
+					</a>
+					<li class="nav-item mx-3">
+					<a href="Index.html" class="text-light">Home</a>
+					</li>
+					<li class="nav-item dropdown mx-3">
+						<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Account
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="SignUp.html">Sign Up</a>
+							<a class="dropdown-item" href="SignIn.html">Sign In</a>
+							<a class="dropdown-item" href="#">Account Info</a>
+							<a class="dropdown-item" href="#">Log Out</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Edit Account</a>
+							<a class="dropdown-item" href="#">Delete Account</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown mx-3">
+						<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Reserve
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="SignIn.html">Create a Reservation</a>
+							<a class="dropdown-item" href="SignIn.html">Edit Reservationn</a>
+							<a class="dropdown-item" href="SignIn.html">Delete Reservation</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="SignIn.html">Make Payment</a>
+						</div>
+					</li>
+					<li class="nav-item mx-3">
+						<a href="#" class="text-light">Contact us</a>
+					</li>
+					<li class="nav-item mx-3">
+						<a href="#" class="text-light">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	<div class="w-100 d-flex flex-column">
+		<div id = "Header"><br>WELCOME TO RU PARKING</div>
+
+
+
+		<div class="w-100 d-flex flex-row justify-content-center">
+			<ul class="listul">
+				<li class="b1">
+					<a class="trigger_popup_fricc">
+						<img src="images/pags-active.png">
+						<p>Reserve</p>
+					</a>
+					<!-- popup part -->
+					<div class="hover_bkgr_fricc">
+						<div>
+							<div class="popupCloseButton">X</div>
+
+							<a href="Walkin.html" class="btn btn-outline-warning">Walk-in Customer</a>
+							<a href="ReservationForm.html" class="btn btn-outline-warning">Registered Customer</a>
+
+							<script type="text/javascript">
+							$(window).load(function () {
+								$(".trigger_popup_fricc").click(function(){
+								$('.hover_bkgr_fricc').show();
+							});
+							$('.popupCloseButton').click(function(){
+								$('.hover_bkgr_fricc').hide();
+							});
+							});
+							</script>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<ul class="listul">
+				<li class="b2">
+					<a href="SignUp.html">
+						<img src="images/pags-active.png">
+						<p>Sign Up</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="listul">
+				<li  class="b3">
+					<a href="SignIn.html">
+						<img src="images/pags-active.png">
+						<p>Sign In</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="d-flex w-100 my-5">
+			<div class="d-flex w-100">
+				<div class="top-row w-100">
+					<h1 class="aligncenter font-italic text-light">
+						Quick spot alot at RU Parking
+					</h1>
+				</div>
+			</div>
+		</div>
+	<!--3 pic-->
+
+		<div class="w-100 d-flex flex-column flex-lg-row overflow-auto align-items-center justify-content-center my-2">
+		  <div class="w-50 d-flex flex-column mr-2 align-items-center my-2">
+			  <div class="container_for_picture_1">
+				<img src="images\church_street_deck.jpg" class="w-100" alt="Cannot show" width="200" height="200" >
+			  </div>
+			  <div class="container_for_picture_2  bg-dark align-items-center">
+				<a href="https://www.google.com/maps/place/Lower+Church+Street+Deck/@40.4957113,-74.4432165,15z/data=!4m5!3m4!1s0x0:0xe9d8a2868241b0c4!8m2!3d40.4957113!4d-74.4432165">
+				<img src="images\lower-church-street-deck-map.png" alt="Cannot show" width="200" height="200" >
+				</a>
+				<div class="content-container_for_picture p-2">
+				  <h2>Lower Church Street Deck</h2>
+				  <li><a href="https://www.njnbpa.org/parking-info/parking-rates/">90 Church St, New Brunswick, NJ 08901</a></li>
+				</div>
+			</div>
+		  </div>
+		  <div class="w-50 d-flex flex-column mr-2 align-items-center my-2">
+			  <div class="container_for_picture_1">
+				<img src="images\moris-street-deck.png" class="w-100" alt="Cannot show" width="200" height="200" >
+			  </div>
+			  <div class="container_for_picture_2 bg-dark align-items-center">
+				<a href="https://www.google.com/maps/place/70+New+St,+New+Brunswick,+NJ+08901/@40.4917822,-74.4463648,16.74z/data=!4m5!3m4!1s0x89c3c65a799e53a5:0x955e8915c9e8b29f!8m2!3d40.4920074!4d-74.44355">
+				<img src="images\morris-street-deck-map.png" alt="Cannot show" width="200" height="200" >
+				</a>
+				<div class="content-container_for_picture p-2 ">
+				  <h2>Moris Street Deck</h2>
+				  <li><a href="https://www.njnbpa.org/parking-info/parking-rates/">70 New St New Brunswick, NJ 08901</a></li>
+				</div>
+			</div>
+		  </div>
+		  <div class="w-50 d-flex flex-column align-items-center mr-2 my-2">
+			  <div class="container_for_picture_1">
+				<img src="images\edison-station-parking-lot-3.png" class="w-100" alt="Cannot show" width="200" height="200" >
+			  </div>
+			  <div class="container_for_picture_2  bg-dark align-items-center">
+				<a href="https://www.google.com/maps?rlz=1C1CHBF_enVN854VN854&biw=1536&bih=711&sxsrf=ACYBGNSFtQiv8Q-L5qPuDFM3JQN1lPNgoQ:1572202993873&q=Edison+Station+Parking+Lot+3&uact=5&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjMpJGUkb3lAhWRmeAKHbDdDacQ_AUIEigB">
+				<img src="images\edison-station-parking-lot-3-map.png" alt="Cannot show" width="200" height="200" >
+				</a>
+				<div class="content-container_for_picture p-2 bg-dark">
+				  <h2>Edison Station Parking Lot 3</h2>
+				  <li><a href="http://www.parkamerica.net/">Kilmer Rd, Edison, NJ 08817</a></li>
+				</div>
+			</div>
+		  </div>
+		</div>
+
+
+	<!-- <div class="wrapper indent-top">
+	<center><strong>
+	Our parking garage is state of the art in automation and convience. When you arrive to our garage you will<br />
+	be greeted by a valet that will acquire your information through a license scanner and license plate reader.<br />
+	After your information is taken, the valet will then take your car and will give you a ticket. When you<br />
+	return to the garage, the valet will verify you ticket, and retrieve you car promptly due to a maximized<br />
+	parking method implemented by our garge. Thank you for choosing RU Parking, where your car is our care.<br />
+	</strong></center>
+	</div> -->
+
+
+
+	<!-- Footer -->
+	<div class="foot">
+		<footer>
+			<div class="copyright">
+				&copy; 2019 <strong>RU Parking Garage</strong><!-- instert=>class="footer-logo"-->
+			</div>
+			<ul class="d-flex flex-row-reverse">
+				<li class="mx-1"><a href="#"><img src="images/social-link-1.jpg" width="20" height="20" alt=""></a></li>
+				<li class="mx-1"><a href="#"><img src="images/social-link-2.jpg" width="20" height="20" alt=""></a></li>
+				<li class="mx-1"><a href="#"><img src="images/social-link-3.jpg" width="20" height="20" alt=""></a></li>
+			</ul>
+		</footer>
+		</div>
+	</div>
+</body>
+</html>
