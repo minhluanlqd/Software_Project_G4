@@ -22,6 +22,16 @@ app.get('/Index.html',function(req,res)
   res.sendFile(__dirname+'/Index.html');
 })
 
+app.get('/',function(req,res)
+{
+  res.sendFile(__dirname+'/index.html');
+})
+
+app.get('/Index.html',function(req,res)
+{
+  res.sendFile(__dirname+'/Index.html');
+})
+
 app.get('/SignUp.html',function(req,res){
   //create the sign up page
   res.sendFile(__dirname+'/SignUp.html');
@@ -32,7 +42,7 @@ app.post('/Index.html', urlencodedParser,function(req, res) {
   console.log(req.body)
   //take cvv number
   console.log(req.body.username)
-  res.sendFile(__dirname+'/index.html');
+  res.sendFile(__dirname+'/Index.html');
 })
 
 app.get('/SignIn.html',function(req,res)
@@ -41,7 +51,6 @@ app.get('/SignIn.html',function(req,res)
 })
 app.post('/SucessSignIn.html',urlencodedParser,function(req,res){
   console.log(req.body)
-  myDB.findUserName(req.body);
   res.sendFile(__dirname+'/SuccessSignIn.html');
 })
 
@@ -53,7 +62,7 @@ app.post('/Walkin.html', urlencodedParser,function(req, res) {
   //get data at req.body
   console.log(req.body);
   // link with the reservation page
-  res.sendFile(__dirname+'/Walkin.html');
+  res.sendFile(__dirname+'/Index.html');
 
 })
 
@@ -67,7 +76,7 @@ app.post('/ReservationForm.html', urlencodedParser,function(req, res) {
   //get data at req.body
   console.log(req.body);
   // link with the reservation page
-  res.sendFile(__dirname+'/ReservationForm.html');
+  res.sendFile(__dirname+'/SuccessSignIn.html');
 
 })
 
