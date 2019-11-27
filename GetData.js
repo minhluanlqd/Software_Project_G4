@@ -15,56 +15,62 @@ app.use('/images',express.static('images'));
 app.get('/',function(req,res)
 {
   res.sendFile(__dirname+'/index.html');
-});
+})
 
-app.get('/index.html',function(req,res)
+app.get('/Index.html',function(req,res)
 {
-  res.sendFile(__dirname+'/index.html');
+  res.sendFile(__dirname+'/Index.html');
 })
-//////////////////////////////////////////////////
-app.get('/signuptest_2.html',function(req,res){
+
+app.get('/SignUp.html',function(req,res){
   //create the sign up page
-  res.sendFile(__dirname+'/signuptest_2.html');
-});
+  res.sendFile(__dirname+'/SignUp.html');
+})
+app.post('/Index.html', urlencodedParser,function(req, res) {
+  //get data at req.body
 
-
-app.post('/signuptest_2.html', urlencodedParser,function(req, res) {
-  
   console.log(req.body)
-  
+  //take cvv number
   console.log(req.body.username)
- 
-  myDB.insertSignUpData(req.body);
-
   res.sendFile(__dirname+'/index.html');
 })
-////////////////////////////////////////////////////////////
-app.get('/walk_in_signup.html',function(req,res){
-  //create  a server for the reserved page
-  res.sendFile(__dirname+'/walk_in_signup.html');
+
+app.get('/SignIn.html',function(req,res)
+{
+  res.sendFile(__dirname+'/SignIn.html');
+})
+app.post('/SucessSignIn.html',urlencodedParser,function(req,res){
+  console.log(req.body)
+  myDB.findUserName(req.body);
+  res.sendFile(__dirname+'/SuccessSignIn.html');
 })
 
-
-app.post('/walk_in_signup.html', urlencodedParser,function(req, res) {
+app.get('/Walkin.html',function(req,res){
+  //create  a server for the reserved page
+  res.sendFile(__dirname+'/Walkin.html');
+})
+app.post('/Walkin.html', urlencodedParser,function(req, res) {
   //get data at req.body
   console.log(req.body);
   // link with the reservation page
-  res.sendFile(__dirname+'/walk_in_signup.html');
+  res.sendFile(__dirname+'/Walkin.html');
 
 })
 
 
-app.get('/sign_in_2.html',function(req,res)
-{
-  res.sendFile(__dirname+'/sign_in_2.html');
+
+app.get('/ReservationForm.html',function(req,res){
+  //create  a server for the reserved page
+  res.sendFile(__dirname+'/ReservationForm.html');
 })
-app.post('/sign_in_2.html',urlencodedParser,function(req,res){
-  console.log(req.body)
-  
-  myDB.findUserName(req.body);
-  res.sendFile(__dirname+'/index.html');
-  
+app.post('/ReservationForm.html', urlencodedParser,function(req, res) {
+  //get data at req.body
+  console.log(req.body);
+  // link with the reservation page
+  res.sendFile(__dirname+'/ReservationForm.html');
+
 })
+
 
 
 
