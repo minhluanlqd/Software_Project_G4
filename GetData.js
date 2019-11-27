@@ -22,21 +22,11 @@ app.get('/Index.html',function(req,res)
   res.sendFile(__dirname+'/Index.html');
 })
 
-app.get('/',function(req,res)
-{
-  res.sendFile(__dirname+'/Index.html');
-})
-
-app.get('/Index.html',function(req,res)
-{
-  res.sendFile(__dirname+'/Index.html');
-})
-
 app.get('/SignUp.html',function(req,res){
   //create the sign up page
   res.sendFile(__dirname+'/SignUp.html');
 })
-app.post('/Index.html', urlencodedParser,function(req, res) {
+app.post('/SignUp.html', urlencodedParser,function(req, res) {
   //get data at req.body
 
   console.log(req.body)
