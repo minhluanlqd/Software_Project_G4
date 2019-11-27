@@ -45,15 +45,7 @@ app.post('/Index.html', urlencodedParser,function(req, res) {
   res.sendFile(__dirname+'/Index.html');
 })
 
-app.get('/SignIn.html',function(req,res)
-{
-  res.sendFile(__dirname+'/SignIn.html');
-})
-app.post('/SignIn.html',urlencodedParser,function(req,res){
-  console.log(req.body)
-  res.sendFile(__dirname+'/SuccessSignIn.html');
-})
-
+//Walk-in
 app.get('/Walkin.html',function(req,res){
   //create  a server for the reserved page
   res.sendFile(__dirname+'/Walkin.html');
@@ -66,8 +58,20 @@ app.post('/Walkin.html', urlencodedParser,function(req, res) {
 
 })
 
+//Online Customer
+app.get('/SignIn.html',function(req,res)
+{
+  res.sendFile(__dirname+'/SignIn.html');
+})
+app.post('/SignIn.html',urlencodedParser,function(req,res){
+  console.log(req.body)
+  res.sendFile(__dirname+'/SuccessSignIn.html');
+})
 
-
+app.get('/SuccessSignIn.html',function(req,res)
+{
+  res.sendFile(__dirname+'/SuccessSignIn.html');
+})
 app.get('/ReservationForm.html',function(req,res){
   //create  a server for the reserved page
   res.sendFile(__dirname+'/ReservationForm.html');
@@ -78,6 +82,34 @@ app.post('/ReservationForm.html', urlencodedParser,function(req, res) {
   // link with the reservation page
   res.sendFile(__dirname+'/SuccessSignIn.html');
 
+})
+
+app.get('/EditReservation.html',function(req,res){
+  //create  a server for the reserved page
+  res.sendFile(__dirname+'/EditReservation.html');
+})
+app.post('/EditReservation.html', urlencodedParser,function(req, res) {
+  //get data at req.body
+  console.log(req.body);
+  // link with the reservation page
+  res.sendFile(__dirname+'/SuccessSignIn.html');
+
+})
+//Cancel
+app.get('/CancelReservation.html',function(req,res){
+  //create  a server for the reserved page
+  res.sendFile(__dirname+'/CancelReservation.html');
+})
+app.post('/CancelReservation.html', urlencodedParser,function(req, res) {
+  //get data at req.body
+  console.log(req.body);
+  // link with the reservation page
+  res.sendFile(__dirname+'/CancelSuccess.html');
+
+})
+
+app.get('/CancelSuccess.html',function(req,res){
+  res.sendFile(__dirname+'/CancelSuccess.html');
 })
 
 
