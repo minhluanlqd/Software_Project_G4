@@ -1,27 +1,39 @@
-import smtplib
+import smtplib, ssl
+import qrcode
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 
-gmail_user = 'ntdk0919917609@gmail.com'
-gmail_password = 'Duykhanh1234'
+sender_email = "ntdk0919917609@gmail.com"
+receiver_email = "aideptrai8655@gmail.com"
+password = 'Duykhanh1234'
 
-sent_from = gmail_user
-to = ['aideptrai8655@gmail.com']
-subject = 'OMG Super Important Message'
-body = 'Hey, whats up?\n\n- You'
+message = MIMEMultipart("alternative")
+message["Subject"] = "multipart test"
+message["From"] = sender_email
+message["To"] = receiver_email
 
-email_text = """\
-From: %s
-To: %s
-Subject: %s
+# Create the plain-text and HTML version of your message
+text = """\
+Hi,
+This is your QR CODE"""
 
-%s
-""" % (sent_from, ", ".join(to), subject, body)
+SlotNumber=str(i)+'.png'
+Image=open(SlotNumber,'rb')
 
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.ehlo()
-server.starttls()
-server.login(gmail_user, gmail_password)
-server.sendmail(sent_from, to, email_text)
-server.quit()
+# Turn these into plain/html MIMEText objects
+part1 = MIMEText(text, "plain")
+part2 = MIMEImage(image.read())
 
-print ('Email sent!')
+# Add HTML/plain-text parts to MIMEMultipart message
+# The email client will try to render the last part first
+message.attach(part1)
+message.attach(part2)
 
+# Create secure connection with server and send email
+context = ssl.create_default_context()
+with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+    server.login(sender_email, password)
+    server.sendmail(
+        sender_email, receiver_email, message.as_string()
+    )
