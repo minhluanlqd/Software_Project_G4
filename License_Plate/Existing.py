@@ -11,9 +11,13 @@ current_customer_plate=input('license_plate')
 
 #list
 newtransaction=[{'Username':'0','TransactionID':'0','Cost':0}]
+myquery={}
 
 #overtime cost
 overtime=1
+
+#take max
+maxID=1
 #take the current time
 now=datetime.now()
 now=now.strftime("%H%M")
@@ -28,9 +32,12 @@ for i in collection.find({},{'Username':1,'License_plate':1,'Time_end':1}):
             print(overtime) #overtime price
             lot=collection2.count()
             newtransaction[0]['Username']=i['Username']
-            newtransaction[0]['TransactionID']=str(lot+1)       
+            for lastID in collection2.find({},{'TransactionID':1}):
+                if int(lastID['TransactionID']) > maxID:
+                    maxID=int(lastID['TransactionID'])
+            newtransaction[0]['TransactionID']=str(maxID+1)       
             newtransaction[0]['Cost']=overtime
             print(newtransaction[0])
             x=collection2.insert_many(newtransaction)
-##
+
 
