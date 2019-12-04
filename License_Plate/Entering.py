@@ -25,8 +25,6 @@ collection=database['garage']
 #criminal license database
 collectionlicense=database['criminallicense']
 
-#XML classifier
-car_cascade = cv2.CascadeClassifier('cars.xml')
 
 #ALPR
 SECRET_KEY = 'sk_8d7c25a2ea0f1d3b289715a9'
@@ -40,14 +38,8 @@ path='C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/Images/'
 while True:
     
     ret, frames = cap.read() 
-    gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
     
-         
-    # Detects cars of different sizes in the input image
-    cars = car_cascade.detectMultiScale(gray, 1.1, 1)
     cv2.imwrite(os.path.join(path,str(i)+'.png'),frames)  
-    for (x,y,w,h) in cars:
-        cv2.rectangle(frames,(x,y),(x+w,y+h),(0,0,255),2)
     image=path+str(i)+'.png'
     #Detect license_plate
     with open(image, 'rb') as image_file:
