@@ -38,10 +38,11 @@ path='C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/Images/'
 while True:
     
     ret, frames = cap.read() 
-    
+
+    #Seperate the file into different frames
     cv2.imwrite(os.path.join(path,str(i)+'.png'),frames)  
     image=path+str(i)+'.png'
-    #Detect license_plate
+    #Detect license_plate by taking the image/second of the frame
     with open(image, 'rb') as image_file:
         #Detect License 
         img_base64 = base64.b64encode(image_file.read())
@@ -49,10 +50,16 @@ while True:
     
     
     #Take the current license plate
+    
     current_license_plate=r.json()
-    current_license_plate=current_license_plate["results"][0]['plate']
-    print(current_license_plate)
-
+    
+    try:
+        current_license_plate=current_license_plate["results"][0]['plate']
+        print(current_license_plate)
+    except:
+        print('There is no customer who is coming in')
+        current_license_plate=None
+   
     #Take the current image path to detech the shape of the car 
     shapeimage=cv2.imread(image)
     
