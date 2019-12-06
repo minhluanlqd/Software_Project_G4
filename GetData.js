@@ -6,6 +6,7 @@ var app=express();
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+var cus_id;
 
 //set localhost:3000/signup to grab the data from the signup
 app.use('/css',express.static('css'));
@@ -20,6 +21,7 @@ app.get('/',function(req,res)
 app.get('/Index.html',function(req,res)
 {
   res.sendFile(__dirname+'/Index.html');
+
 })
 
 app.get('/SignUp.html',function(req,res){
@@ -32,6 +34,7 @@ app.post('/SignUp.html', urlencodedParser,function(req, res) {
   console.log(req.body)
   //take cvv number
   console.log(req.body.username)
+  myDB.insertSignUpData(req.body);
   res.sendFile(__dirname+'/Index.html');
 })
 
@@ -55,6 +58,7 @@ app.get('/SignIn.html',function(req,res)
 })
 app.post('/SignIn.html',urlencodedParser,function(req,res){
   console.log(req.body)
+  myDB.getUserId(req.body);
   res.sendFile(__dirname+'/SuccessSignIn.html');
 })
 
