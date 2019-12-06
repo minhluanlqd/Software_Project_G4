@@ -1,7 +1,7 @@
 import pymongo
 from datetime import datetime
 from FrequentCustomer import Detect_Frequent
-
+from Garage import *
 #database
 connection= pymongo.MongoClient("mongodb+srv://tanngo:trtan!605@cluster0-nyi9f.mongodb.net/parkinglot?retryWrites=true&w=majority")
 database=connection['parkinglot']
@@ -23,7 +23,7 @@ now=now.strftime("%H%M")
 
 #when the customer exits,the total cost will send to the blockchainpart
 def Check_Exit(current_customer_plate,image):
-    for i in collection.find({},{'Username':1,'License_plate':1,'Time_end':1,'ID':1}).sort('ID',-1):
+    for i in collection.find({},{'Username':1,'License_plate':1,'Time_end':1,'Slot':1,'ID':1}).sort('ID',-1):
         if (current_customer_plate==i['License_plate']):
             time_actual_end=int(now)-(int(i['Time_end'][0])*1000+int(i['Time_end'][1])*100+int(i['Time_end'][3])*10+int(i['Time_end'][4]))
             print(time_actual_end)
@@ -42,6 +42,12 @@ def Check_Exit(current_customer_plate,image):
                 newtransaction[0]['Cost']=overtime-overtime*reduction
                 print(newtransaction[0])
                 #x=collection2.insert_many(newtransaction)
+            Release_Slot(int(i['Slot']))
+            OldSlot={"Slot":i['Slot']}
+            NewSlot={"$set":{"Slot":"1"}}
+            collection.update_one(OldSlot,NewSlot)
+            print(Is_Empty_Slot(101))
+            break
             
 
 
