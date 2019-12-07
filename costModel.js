@@ -63,8 +63,8 @@ var costModel = {
             }
             else { totalCost += this.p6 * this.interval6(this.myCursorTime); }
         }
-
-        return totalCost;
+        var final = totalCost.toPrecision(3);
+        return parseFloat(final);
 
     },
     getNormalCostByShape: function (shape, start, end) {
