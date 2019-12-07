@@ -33,7 +33,6 @@ MongoClient.connect(url,{useUnifiedTopology: true }, function (err, db) {
                         console.log("Sign up success");
                       });
                   });
-
                 }
             else{
                 console.log("username already exit");
@@ -60,18 +59,26 @@ MongoClient.connect(url,{useUnifiedTopology: true }, function (err, db) {
             });
         }
 
-        exports.getSize = () =>{
+        exports.pay = data => {
             var dbo = db.db("parkinglot");
-            dbo.collection("customers").count({}, (err, res) =>{
-              if (err) console.log(err);
-            //  console.log(res);
-            //  var t = res;
-            //  console.log("t= " + t);
-              return res;
+            //var dbo = db.db("mydb");
+            //var myobj = JSON.parse(data);
+            dbo.collection("UserCount").findOne({'myId':"my"}, function (err, res) {
+                if (err) throw err;
+                if(res.currentId != 0){
+                  dbo.collection("customers").findOneAndUpdate({'user_id':res.currentId},{$set: {NameOnCard : data.NameOnCard,
+                                                                                                CardNumber: data.CardNumber,
+                                                                                                cvv: data.cvv,
+                                                                                              ExpiryDate: data.ExpiryDate}}, function (err, res2) {
+                      if (err) throw err;
+                      console.log("Add payment success");
+                  });
+                }
+                else{
+                  console.log("User doesn't SignIn");
+                }
             });
-
         }
-
 
 
 
