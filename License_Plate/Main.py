@@ -1,14 +1,23 @@
 import cv2
 import os
+import pymongo
 from ShapeDetection import detect_shape
 from Exit import Check_Exit
 from Enter import Check_Enter
 from ALPR import Take_License
-
+from SendEmailReserves import Send_Email_Reserve
 #test camera
-cam_enter = cv2.VideoCapture('C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/test1.mp4')
-cam_exit=cv2.VideoCapture('C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/test.mp4')
+cam_enter = cv2.VideoCapture('C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/test.mp4')
+cam_exit=cv2.VideoCapture('C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/test1.mp4')
 
+#database
+connection= pymongo.MongoClient("mongodb+srv://tanngo:trtan!605@cluster0-nyi9f.mongodb.net/parkinglot?retryWrites=true&w=majority")
+database=connection['parkinglot']
+collection=database['garage']
+
+#count
+countdata=collection.count()
+print (countdata)
 def main():
     
     #enter list
@@ -31,6 +40,14 @@ def main():
         except:
             frames_enter=None
 
+        #New reservation,send email
+        if collection.count()>countdata:
+            countdata=collection.count
+            for i in collection.find({},{'Time_start':1,'Time_end':1,'Cost':1,
+                                         'Email':1,'ID':1}).sort('ID',-1):
+                Send_Email_Reserve(i['Email'],i['Cost'],i['Time_start'],i['Time_end'])
+                break
+         
         #Check when customer enters
         if frames_enter is not None:
             gray_enter = cv2.cvtColor(frames_enter, cv2.COLOR_BGR2GRAY)
