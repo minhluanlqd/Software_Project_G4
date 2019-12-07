@@ -69,7 +69,6 @@
             <input name="datefield" type='time' min="00:00" max="23:59" required><br><br>
 
             <!-- Parking Spot Number:<br> -->
-            <input name="licensenumber" type = "text" placeholder="License Number" required><br><br>
             <input src="reservationSuccess.html" class="btn btn-primary" type = 'submit' value = 'Create Reservation' name = 'makeRes'><br><br>
           </form>
           <table class="tableprice">
@@ -194,7 +193,7 @@
                               return "green";
                           }
                       }
-                      var myVar = <%- JSON.stringify(data) %>;
+                      // var myVar = <%- JSON.stringify(data) %>;
                       // this is the string received from the database. each char represents a spot, o is occupied, r is reserved, n is not occupied
 
                       svg_10.style.fill=getColor(myVar.charAt(0));
