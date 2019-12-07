@@ -23,22 +23,33 @@ app.get('/Index.html',function(req,res)
   res.sendFile(__dirname+'/Index.html');
 
 })
-
+/////////////////////////////////////SignUp
 app.get('/SignUp.html',function(req,res){
   //create the sign up page
   res.sendFile(__dirname+'/SignUp.html');
 })
 app.post('/SignUp.html', urlencodedParser,function(req, res) {
   //get data at req.body
-
   console.log(req.body)
   //take cvv number
   console.log(req.body.username)
   myDB.insertSignUpData(req.body);
   res.sendFile(__dirname+'/Index.html');
 })
+///////////////////////////////////////Payment
+app.get('/payment.html',function(req,res){
+  //create  a server for the reserved page
+  res.sendFile(__dirname+'/payment.html');
+})
+app.post('/payment.html', urlencodedParser,function(req, res) {
+  //get data at req.body
+  console.log(req.body);
+  // link with the reservation page
+  myDB.pay(req.body);
+  res.sendFile(__dirname+'/Index.html');
 
-//Walk-in
+})
+///////////////////////////////////////Walk-in
 app.get('/Walkin.html',function(req,res){
   //create  a server for the reserved page
   res.sendFile(__dirname+'/Walkin.html');
@@ -51,7 +62,7 @@ app.post('/Walkin.html', urlencodedParser,function(req, res) {
 
 })
 
-//Online Customer
+/////////////////////////////Online Customer
 app.get('/SignIn.html',function(req,res)
 {
   res.sendFile(__dirname+'/SignIn.html');
@@ -66,13 +77,19 @@ app.get('/SuccessSignIn.html',function(req,res)
 {
   res.sendFile(__dirname+'/SuccessSignIn.html');
 })
+
+app.post('/SuccessSignIn.html',function(req,res){
+  console.log('ccccc');
+})
+
+
 app.get('/ReservationForm.html',function(req,res){
   //create  a server for the reserved page
   res.sendFile(__dirname+'/ReservationForm.html');
 })
 app.post('/ReservationForm.html', urlencodedParser,function(req, res) {
   //get data at req.body
-  console.log(req.body);
+  console.log(req.body.datefield[0]-1);
   // link with the reservation page
   res.sendFile(__dirname+'/SuccessSignIn.html');
 
@@ -89,7 +106,7 @@ app.post('/EditReservation.html', urlencodedParser,function(req, res) {
   res.sendFile(__dirname+'/SuccessSignIn.html');
 
 })
-//Cancel
+/////////////////////////////////////////////////////Cancel
 app.get('/CancelReservation.html',function(req,res){
   //create  a server for the reserved page
   res.sendFile(__dirname+'/CancelReservation.html');
