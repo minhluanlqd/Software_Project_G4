@@ -117,7 +117,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
                     data.email = customer.email;
                     data.drivinglicensenumber = customer.drivinglicensenumber;
                     data.slot = garage.assignSlot('car');
-                    data.cost =- costModel.getNormalCostByShape('car', data.startTime, data.endTime);
+                    data.cost =0;
                     dbo.collection("UserCount").findOneAndUpdate({ 'myId': "my" }, { $inc: { "transCount": 1 } }, (err3, res1) => {
                         if (err3) throw err3;
                         dbo.collection("UserCount").findOne({ 'myId': "my" }, (err, result) => {
@@ -140,10 +140,21 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
         var dbo = db.db("parkinglot");
         data.slot = garage.assignSlot('truck');
         data.cost = -costModel.getWalkinCostByShape('truck', data.startTime, data.endTime);
+        //add user_id
+        dbo.collection("UserCount").findOneAndUpdate({ 'myId': "my" }, { $inc: { "count": 1 } }, function (err, res3) {
+            if (err) throw err;
+        });
+        dbo.collection("UserCount").findOne({ 'myId': "my" }, function (err, result) {
+            if (err) throw err;
+            // assgin "count"=user_id
+            data.user_id = result.count;
+        });
         dbo.collection("UserCount").findOneAndUpdate({ 'myId': "my" }, { $inc: { "transCount": 1 } }, (err3, res1) => {
             if (err3) throw err3;
             dbo.collection("UserCount").findOne({ 'myId': "my" }, (err, result) => {
                 data.transId = result.transCount;
+                console.log("Order: ");
+                console.log(data);
                 dbo.collection("garage").insertOne(data, (err1, res4) => {
                     if (err1) throw err;
                 })
@@ -169,16 +180,17 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
             refund._id=null;
             dbo.collection("UserCount").findOneAndUpdate({ 'myId': "my" }, { $inc: { "transCount": 1 } }, (err3, res1) => {
                 if (err3) throw err3;
-            })
-            dbo.collection("UserCount").findOne({ 'myId': "my" }, (err, res) => {
-                if (err) throw err;
-                refund.transId = res.transCount;
-                console.log("Refund transaction:");
-                console.log(refund);
-                dbo.collection("garage").insertOne(refund, (err1, res1) => {
-                    if (err1) throw err;
+                dbo.collection("UserCount").findOne({ 'myId': "my" }, (err, res) => {
+                    if (err) throw err;
+                    refund.transId = res.transCount;
+                    console.log("Refund transaction:");
+                    console.log(refund);
+                    dbo.collection("garage").insertOne(refund, (err1, res1) => {
+                        if (err1) throw err;
+                    })
                 })
             })
+
           })
         }else
         console.log('User does not sign in');
@@ -187,7 +199,8 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
 
     exports.editReservation= data =>{
       module.exports.CancelReservation();
-      module.exports.insertReservation(data);
+      setTimeout(() => {  module.exports.insertReservation(data); }, 2000);
+
     }
 
 })
