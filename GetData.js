@@ -105,8 +105,8 @@ app.get('/EditReservation.html', function (req, res) {
 app.post('/EditReservation.html', urlencodedParser, function (req, res) {
   //get data at req.body //
   console.log(req.body);
+  myDB.editReservation(req.body);
   // link with the reservation page
-  //myDB.editReservation();
   res.sendFile(__dirname + '/SuccessSignIn.html');
 
 })
@@ -124,6 +124,8 @@ app.post('/CancelReservation.html', urlencodedParser, function (req, res) {
 })
 
 app.get('/CancelSuccess.html', function (req, res) {
+  // here cancel
+  myDB.CancelReservation();
   res.sendFile(__dirname + '/CancelSuccess.html');
 })
 
