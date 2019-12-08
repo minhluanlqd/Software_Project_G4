@@ -6,6 +6,12 @@ var garage = {
     floor4: [true, true, true, true, true],
     floor5: [true, true, true, true, true],
 
+    /*floor1: [false, false, false, false, false],
+    floor2: [false, false, false, false, false],
+    floor3: [false, false, false, false, false],
+    floor4: [false, false, false, false, false],
+    floor5: [false, false, false, false, false],*/ 
+
 
 
 
