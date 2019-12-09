@@ -45,8 +45,6 @@ def addBlock(transNum, userID, cost):
 			blockChain.append(Block(blockChain[-1].hash, int(userID), float(cost), int(transNum))) 
 			ledgerdata.insert(transNum, encrypt(str(userID) + " " + str(cost)) + '\n')
 			hashdata.insert(transNum, blockChain[-1].hash + '\n')
-		else:
-			print('RE-ENTRY')
 
 	with open('ledger.txt', 'w') as ledgerFile:
 		ledgerFile.writelines(ledgerdata)
