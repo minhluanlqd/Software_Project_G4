@@ -7,23 +7,24 @@ from ShapeDetection import detect_shape
 from SendEmail import Send_Email
 from Cost import *
 from FrequentCustomer import Detect_Frequent
+from Exit import Check_Exit
 #take the current time
 now=datetime.now()
 now=now.strftime("%H%M")
 
+#list
+RemainSlot=[{'Slot':0}]
 #database
 connection= pymongo.MongoClient("mongodb+srv://tanngo:trtan!605@cluster0-nyi9f.mongodb.net/parkinglot?retryWrites=true&w=majority")
 database=connection['parkinglot']
 #customer database : time_start,time_end,...
 collection=database['garage']
 collection2=database['customers']
+collection3=database['docker']
 #criminal license database
 collectionlicense=database['criminallicense']
 
 def Check_Enter(current_customer_plate,image):
-
-    #Check 
-    m=0
     #Take the current image path to detech the shape of the car 
     shapeimage=cv2.imread(image)
     #Compare with blacklist car
@@ -44,53 +45,30 @@ def Check_Enter(current_customer_plate,image):
                 currentshape=detect_shape(shapeimage)
                 if currentshape=='car':
                     Slot=Assign_Slot('car')
-                    for h in collection2.find({},{'user_id':1}):
-                        if f['user_id']==h['user_id']:
-                            Cost=getNormalCostByShape('car',f['startTime'],f['endTime'])
-                            m=1
-                    if (m==0):
-                        Cost=getWalkinCostByShape('car',f['startTime'],f['endTime'])
-                    print(Cost)
-                    reduction=Detect_Frequent(current_customer_plate)
-                    Cost=Cost-Cost*reduction
-                    Cost=-round(Cost,2)
-                    print(Cost)
-                    #update the cost and the slot
+                    #Update the slot
                     Old={"slot":f['slot']}
                     New={"$set":{"slot":Slot}}
                     collection.update_one(Old,New)
-                    OldCost={"cost":f['cost']}
-                    NewCost={"$set":{"cost":Cost}}
-                    collection.update_one(OldCost,NewCost)
-                    Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],Cost)
+                    Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],f['cost'])
                     
                 elif currentshape=='truck':
-                    Slot=Assign_Slot('truck')
-                    for h in collection2.find({},{'user_id':1}):
-                        if f['user_id']==h['user_id']:
-                            Cost=getNormalCostByShape('truck',f['startTime'],f['endTime'])
-                            m+=1
-                    if (m==0):
-                        Cost=getWalkinCostByShape('truck',f['startTime'],f['endTime'])
-
-                    reduction=Detect_Frequent(current_customer_plate)
-                    print(Cost)
-                    Cost=Cost-Cost*reduction
-                    Cost=-round(Cost,2)
-                    
-                    #update the cost and the slot
+                    Slot=Assign_Slot('truck')                    
+                    #update the slot
                     Old={"slot":f['slot']}
                     New={"$set":{"slot":Slot}}
                     collection.update_one(Old,New)
-                    OldCost={"cost":f['cost']}
-                    NewCost={"$set":{"cost":Cost}}
-                    collection.update_one(OldCost,NewCost)
-                    
-                    Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],Cost)
+                    Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],f['cost'])
+                if (collection3.count()==0):
+                    RemainSlot[0]['Slot']=Slot_Left()
+                    collection3.insert_many(RemainSlot)
+                else:
+                    for i in collection3.find():
+                        Old={"Slot":i['Slot']}
+                        New ={"$set":{"Slot":Slot_Left()}}
+                        collection3.update_one(Old,New)
             else:
                 print('Your time has expired')
             return True
         
     print('You havent registered yet')
     return False 
-
