@@ -12,8 +12,7 @@ floor5=[True, True, True, True, True]
 def Get_Slot_Number(floor, order):
         
         return floor * 100 + order;
-
-    
+     
 
 def Is_Empty_Slot(slotNum): 
         order = slotNum % 10;
@@ -47,6 +46,24 @@ def Remain_Slot(shape):
                     | Is_Empty_Slot(401) | Is_Empty_Slot(402)
                     | Is_Empty_Slot(501) | Is_Empty_Slot(502))
 
+def Slot_Left():
+        i=0
+        for f in floor1:
+                if f:
+                        i+=1
+        for f in floor2:
+                if f:
+                        i+=1
+        for f in floor3:
+                if f:
+                        i+=1
+        for f in floor4:
+                if f:
+                        i+=1
+        for f in floor5:
+                if f:
+                        i+=1
+        return i
 
 
 def Fill_Slot(floor, order):
@@ -85,7 +102,7 @@ def Assign_Slot(shape):
                     for order in range(1,3):
                         if (Is_Empty_Slot(Get_Slot_Number(floor, order))):
                             Fill_Slot(floor, order)
-                            print (Get_Slot_Number(floor, order))
+                            print ("Your slot number is: "+str(Get_Slot_Number(floor, order)))
                             
                             return Get_Slot_Number(floor, order)
                         
@@ -93,6 +110,6 @@ def Assign_Slot(shape):
                     for order in range(3,6):
                         if (Is_Empty_Slot(Get_Slot_Number(floor, order))):
                             Fill_Slot(floor, order)
-                            print (Get_Slot_Number(floor, order))
+                            print ("Your slot number is: "+str(Get_Slot_Number(floor, order)))
                             return Get_Slot_Number(floor, order)
 
