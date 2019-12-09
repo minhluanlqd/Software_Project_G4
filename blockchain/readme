@@ -1,0 +1,5 @@
+How to Use :
+
+1. Run extract.py. This will update the hashtable and ledger with the latest transaction data automatically.
+2. The hashtable and ledger will now be immutable and encrypted. No further changes will be tolerated.
+3. For testing purposes, we can delete all the contents of the ledger and hashtable files and watch them be repopulated once again by running the "python extract.py" command. This will reset the entire payment system and this is only recommended if you know exactly what you are doing.
