@@ -37,7 +37,7 @@ def Check_Enter(current_customer_plate,image):
                                  'email':1,'slot':1,
                                  'transId':1,'cost':1}).sort('transId',-1):
         #Check if there is a reservation
-        if (current_customer_plate==f['drivinglicensenumber']):
+        if ((current_customer_plate==f['drivinglicensenumber'])and(f['cost']<0)):
             #Check if the customer is coming at the right time, 5 minutes before and 5 minutes later the reservation time
             time_start=int(now)-(int(f['startTime'][0])*1000+int(f['startTime'][1])*100+int(f['startTime'][3])*10+int(f['startTime'][4]))
             if (5>=time_start>=-5):
