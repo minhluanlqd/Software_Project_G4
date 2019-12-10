@@ -4,6 +4,7 @@ import os
 
 #YOLO: shape detection
 def detect_shape(image):
+    image=cv2.imread(image)
     # Load the object name of each object in YOLO object
     labelsPath = os.path.sep.join(['C:/Users/Kel Nguyen/Downloads/yolo-object-detection/yolo-object-detection/yolo-coco', "coco.names"]) #take the names of each object in YOYO object
     LABELS = open(labelsPath).read().strip().split("\n")
@@ -64,6 +65,14 @@ def detect_shape(image):
                     # Label the confidences and the classID
                     color = [int(c) for c in COLORS[classIDs[i]]]
                     cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
-                    text = "{}: {:.4f}".format(LABELS[classIDs[i]], confidences[i])
+                    if LABELS[classIDs[i]]=='car':
+                        size='medium'
+                    elif LABELS[classIDs[i]]=='truck':
+                        size='large'
+                    else:
+                        size='small'
+                    text = "{}: {}".format(LABELS[classIDs[i]],size)
                     cv2.putText(image, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX,0.5, color, 2)
+                    cv2.imshow('Output',image)
     return LABELS[classIDs[i]]
+
