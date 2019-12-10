@@ -4,6 +4,7 @@ var index = [];
 var myDB = require('./mongoDB');
 var app = express();
 var fs = require('fs');
+var replaceTemplate = require('./replaceTemplate');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -71,8 +72,29 @@ app.get('/SignIn.html', function (req, res) {
 app.post('/SignIn.html', urlencodedParser, function (req, res) {
   console.log(req.body)
   myDB.getUserId(req.body);
+  //setTimeout(()=>{ myDB.getUserName();}, 1000);
+  // var SuccessSignIn = fs.readFileSync('./SuccessSignIn.html');
 
-  res.sendFile(__dirname + '/SuccessSignIn.html');
+  setTimeout(() => {
+    const SuccessSignIn = fs.readFileSync('./SuccessSignIn.html', 'utf-8');
+    var logic = fs.readFileSync('./loginError.txt', 'utf-8');
+    // console.log(logic);
+    if (logic == 'true') {
+      setTimeout(() => { myDB.getUserName(); }, 500);
+      //replace (html =>username)
+      var username; setTimeout(() => {
+        username = fs.readFileSync('./userName.txt', 'utf-8');
+        username = username.toLocaleUpperCase();
+        var output = replaceTemplate(SuccessSignIn, username);
+        // res.sendFile(__dirname + '/SuccessSignIn.html');
+        res.end(output);
+
+      }, 1000);
+
+    }
+    else res.sendFile(__dirname + '/logInError.html');
+  }, 2000);
+
 })
 
 
@@ -80,7 +102,13 @@ app.post('/SignIn.html', urlencodedParser, function (req, res) {
 
 
 app.get('/SuccessSignIn.html', function (req, res) {
-  res.sendFile(__dirname + '/SuccessSignIn.html');
+  const SuccessSignIn = fs.readFileSync('./SuccessSignIn.html', 'utf-8');
+  var username = fs.readFileSync('./userName.txt', 'utf-8');
+  username = username.toLocaleUpperCase();
+  var output = replaceTemplate(SuccessSignIn, username);
+  // res.sendFile(__dirname + '/SuccessSignIn.html');
+  res.end(output);
+ // res.sendFile(__dirname + '/SuccessSignIn.html');
 })
 
 

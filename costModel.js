@@ -90,7 +90,7 @@ var costModel = {
         }
 
     },
-    getWalkinCostByShape: function(shape, start, end){
+    getWalkinCostByShape: function (shape, start, end) {
         if (shape === 'car') {
             this.p1 = 2;
             this.p2 = 2.5;
