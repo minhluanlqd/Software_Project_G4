@@ -4,12 +4,13 @@ from Enter import *
 from DetectBlacklisted import Detect_Blacklisted
 from ShapeDetection import detect_shape
 from ALPR import Take_License
+
 h=[]
 
-path='C:/Users/Kel Nguyen/Desktop/Python/Garage/License_Plate/Demo/Images/'
+path='E:/RUTGERS/SEM1_2019-2020/SoftWareEngineering/Software_Project_G4-master/License_Plate/Images/'
 for i in range(1,7):
                 h.append(path+str(i)+".jpg")
-   
+
 
 def main():
     
@@ -34,9 +35,10 @@ def main():
                 print(current_customer_plate)
                 Detect_Blacklisted(current_customer_plate)
         elif Enter=='3':
-            path
             detect_shape(path+'1.jpg')
-            detect_shape(path+'2.jpg')    
+            detect_shape(path+'7.jpg')
+            detect_shape(path+'8.jpg')
+            detect_shape(path+'12.jpg')
 
         if cv2.waitKey(1) & 0xFF==ord('q'):
             break
