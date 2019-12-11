@@ -4,26 +4,27 @@ import os
 
 #YOLO: shape detection
 def detect_shape(image):
-    image=cv2.imread(image)
+  
+    shapeimage=cv2.imread(image)
     # Load the object name of each object in YOLO object
-    labelsPath = os.path.sep.join(['C:/Users/Kel Nguyen/Downloads/yolo-object-detection/yolo-object-detection/yolo-coco', "coco.names"]) #take the names of each object in YOYO object
+    labelsPath = os.path.sep.join(['E:/RUTGERS/SEM1_2019-2020/SoftWareEngineering/Software_Project_G4-master/License_Plate/ShapeDependencies', "coco.names"]) #take the names of each object in YOYO object
     LABELS = open(labelsPath).read().strip().split("\n")
     #Initialize a list of colors to represent each possible class label
     np.random.seed(42)
     COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
             dtype="uint8")
-    weightsPath = os.path.sep.join(['C:/Users/Kel Nguyen/Downloads/yolo-object-detection/yolo-object-detection/yolo-coco', "yolov3.weights"])
-    configPath = os.path.sep.join(['C:/Users/Kel Nguyen/Downloads/yolo-object-detection/yolo-object-detection/yolo-coco', "yolov3.cfg"])
+    weightsPath = os.path.sep.join(['E:/RUTGERS/SEM1_2019-2020/SoftWareEngineering/Software_Project_G4-master/License_Plate/ShapeDependencies', "yolov3.weights"])
+    configPath = os.path.sep.join(['E:/RUTGERS/SEM1_2019-2020/SoftWareEngineering/Software_Project_G4-master/License_Plate/ShapeDependencies', "yolov3.cfg"])
     #Load YOLO object detector trained on COCO dataset
     net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
     # load input image
-    (H, W) = image.shape[:2]
+    (H, W) = shapeimage.shape[:2]
     
     #Get layers
     ln = net.getLayerNames()
     ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
-    blob = cv2.dnn.blobFromImage(image, 1 / 255.0, (416, 416),
+    blob = cv2.dnn.blobFromImage(shapeimage, 1 / 255.0, (416, 416),
             swapRB=True, crop=False)
     net.setInput(blob)
     layerOutputs = net.forward(ln)
@@ -64,15 +65,16 @@ def detect_shape(image):
 
                     # Label the confidences and the classID
                     color = [int(c) for c in COLORS[classIDs[i]]]
-                    cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
-                    if LABELS[classIDs[i]]=='car':
-                        size='medium'
-                    elif LABELS[classIDs[i]]=='truck':
+                    cv2.rectangle(shapeimage, (x, y), (x + w, y + h), color, 2)
+                    
+                    if LABELS[classIDs[i]]=='truck':  
                         size='large'
+                    elif ((LABELS[classIDs[i]]=='car') and w >800):
+                        size='medium'
                     else:
                         size='small'
                     text = "{}: {}".format(LABELS[classIDs[i]],size)
-                    cv2.putText(image, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX,0.5, color, 2)
-                    cv2.imshow('Output',image)
+                    cv2.putText(shapeimage, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX,0.5, color, 2)
+            cv2.imshow('Output:'+image,shapeimage)
     return LABELS[classIDs[i]]
 
