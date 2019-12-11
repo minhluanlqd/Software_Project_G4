@@ -122,7 +122,13 @@ app.post('/ReservationForm.html', urlencodedParser, function (req, res) { //log 
 
   // link with the reservation page
   myDB.insertReservation(req.body);
-  res.sendFile(__dirname + '/SuccessSignIn.html');
+  //res.sendFile(__dirname + '/SuccessSignIn.html');
+  const SuccessSignIn = fs.readFileSync('./SuccessSignIn.html', 'utf-8');
+  var username = fs.readFileSync('./userName.txt', 'utf-8');
+  username = username.toLocaleUpperCase();
+  var output = replaceTemplate(SuccessSignIn, username);
+  // res.sendFile(__dirname + '/SuccessSignIn.html');
+  res.end(output);
 
 })
 
@@ -135,7 +141,15 @@ app.post('/EditReservation.html', urlencodedParser, function (req, res) {
   console.log(req.body);
   myDB.editReservation(req.body);
   // link with the reservation page
-  res.sendFile(__dirname + '/SuccessSignIn.html');
+ // res.sendFile(__dirname + '/SuccessSignIn.html');
+ const SuccessSignIn = fs.readFileSync('./SuccessSignIn.html', 'utf-8');
+  var username = fs.readFileSync('./userName.txt', 'utf-8');
+  username = username.toLocaleUpperCase();
+  var output = replaceTemplate(SuccessSignIn, username);
+  // res.sendFile(__dirname + '/SuccessSignIn.html');
+  res.end(output);
+ 
+
 
 })
 /////////////////////////////////////////////////////Cancel
