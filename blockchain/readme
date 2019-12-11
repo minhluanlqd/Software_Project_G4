@@ -1,4 +1,4 @@
-THIS CODE IS ONLY COMPATIBLE WITH PYTHON 2.7; PYTHON 3+ WILL THROW ERRORS.
+THIS CODE IS ONLY COMPATIBLE WITH PYTHON 2.7; PYTHON 3 WILL THROW ERRORS.
 
 How to Use :
 1. Run extract.py. This will update the hashtable and ledger with the latest transaction data automatically.
