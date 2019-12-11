@@ -13,10 +13,10 @@ for i in range(1,7):
 
 
 def main():
-    
+        
     while True:
         
-        Enter=input('''Send Email: press 1 or Check License Plate: press 2 or Check The Shape: press 3 ''')
+        Enter=input('''To print email : press 1Check License Plate: press 2 or Check The Shape: press 3 ''')
         
         if Enter=='1':
             for i in h:
