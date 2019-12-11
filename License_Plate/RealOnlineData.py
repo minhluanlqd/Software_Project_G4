@@ -14,30 +14,30 @@ collection=database['criminallicense']
 page = requests.get('https://www.stolencar.com/Report/Search')
 soup = BeautifulSoup(page.content, 'html.parser')
 Car_stolen_list=soup.find_all(class_='col-sm-6')
-
-if (collection.count()==0): #if the database is having nothing
-    for car in Car_stolen_list[1:]:
-        c=car.get_text()
-        items=c.split()
-        if ((items[4]=='Plate:')):
-            license_plate.append(items[5])
-        elif (items[4]=='TEMPORARY'):
-            pass        
-        else:
-            if (len(items[4])<5):
-                license_plate.append(items[4]+items[5])
+def Update_Blacklisted(): 
+    if (collection.count()==0): #if the database is having nothing
+        for car in Car_stolen_list[1:]:
+            c=car.get_text()
+            items=c.split()
+            if ((items[4]=='Plate:')):
+                license_plate.append(items[5])
+            elif (items[4]=='TEMPORARY'):
+                pass        
             else:
-                license_plate.append(items[4])
-    k=len(license_plate)
-    final_license=[]
-    #delete the duplicate
-    for i in range(k):
-        if license_plate[i] not in final_license:
-            final_license.append(license_plate[i])
-    #insert into the database
-    for i in range(len(final_license)):
-        collection.insert_one({'license_plate':final_license[i]})
-else: #update a new one, if the new one is like the data in the databse,not updating
+                if (len(items[4])<5):
+                    license_plate.append(items[4]+items[5])
+                else:
+                    license_plate.append(items[4])
+        k=len(license_plate)
+        final_license=[]
+        #delete the duplicate
+        for i in range(k):
+            if license_plate[i] not in final_license:
+                final_license.append(license_plate[i])
+        #insert into the database
+        for i in range(len(final_license)):
+            collection.insert_one({'license_plate':final_license[i]})
+    else: #update a new one, if the new one is like the data in the databse,not updating
         for car in Car_stolen_list[1:2]:
             c=car.get_text()
             items=c.split()
