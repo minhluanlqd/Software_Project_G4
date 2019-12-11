@@ -4,4 +4,4 @@ How to Use :
 1. Run extract.py. This will update the hashtable and ledger with the latest transaction data automatically.
 2. The hashtable and ledger will now be immutable and encrypted. No further changes will be tolerated. You can see the Hashes and the ledger printed on your console.
 3. You can enter in the user id of the user to get the user's total balance.
-4. For testing purposes, we can delete all the contents of the ledger and hashtable files and watch them be repopulated once again by running the "python extract.py" command. This will reset the entire payment system and this is only recommended if you know exactly what you are doing.
+4. For testing purposes, we can delete all the contents of the ledger and hashtable files and watch them be repopulated once again by running the "python extract.py" command. This will reset the entire payment system. Since this is very uncommon in real life, this step is only recommended if you know exactly what you are doing.
