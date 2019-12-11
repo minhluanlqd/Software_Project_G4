@@ -19,7 +19,6 @@ def Check_Enter(current_customer_plate,image):
     database=connection['parkinglot']
     #customer database : time_start,time_end,...
     collection=database['garage']
-    collection2=database['customers']
     collection3=database['docker']
     if Detect_Blacklisted(current_customer_plate) is False:
         return False
@@ -30,6 +29,7 @@ def Check_Enter(current_customer_plate,image):
                                  'transId':1,'cost':1}).sort('transId',-1):
         #Check if there is a reservation
         if ((current_customer_plate==f['drivinglicensenumber']) and (f['slot']==1)):
+            
             #Check if it is reservation or cancelation
             if (f['cost']<0):
             #Check if the customer is coming at the right time, 5 minutes before and 5 minutes later the reservation time
@@ -42,18 +42,16 @@ def Check_Enter(current_customer_plate,image):
                         #Update the slot
                         Old={"slot":f['slot']}
                         New={"$set":{"slot":Slot}}
-                        collection.update_one(Old,New)
-                        Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],f['cost'])
-                        print('Gmail has been sent')
+                        
                     
                     elif currentshape=='truck':
                         Slot=Assign_Slot('truck')                    
                         #update the slot
                         Old={"slot":f['slot']}
                         New={"$set":{"slot":Slot}}
-                        collection.update_one(Old,New)
-                        Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],f['cost'])
-                        print('Gmail has been sent')
+                    collection.update_one(Old,New)
+                    Send_Email(f['email'],str(Slot),f['startTime'],f['endTime'],f['cost'])
+                    print('Gmail has been sent')
                     if (collection3.count()==0):
                         RemainSlot[0]['Slot']=Slot_Left()
                         collection3.insert_many(RemainSlot)
