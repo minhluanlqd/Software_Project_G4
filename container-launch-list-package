@@ -1,0 +1,11 @@
+#!/bin/bash
+#container generation, listing and packaging
+
+echo "generating a container garageloc3"
+lxc launch ubuntu:18.04 garageloc3
+sleep 8
+
+lxc list
+sleep 5
+
+sudo tar -zcvf /root/garageloc.tar.gz /var/lib/lxd/storage-pools/default/containers/garageloc3/
