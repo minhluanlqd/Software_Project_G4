@@ -26,3 +26,8 @@ echo "start executing the container"
 
 lxc exec garagaloc3 -- /bin/bash
 sleep 4
+
+#container delete
+exit
+lxc stop garageloc3
+lxc delete garageloc3
