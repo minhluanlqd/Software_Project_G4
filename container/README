@@ -1,0 +1,7 @@
+download the requirement.txt on the number of nodes you want to run your containers in
+I have used 3 nodes
+run ./Createcontainer.sh to set up the defaults to launch the containers 
+./container-launch-list-package.sh for container generation and list of containers in the node and package the container 
+./container-migration.sh migrating the container
+./container-restore-start.sh at the destination node the container will be unpacked and restored to again run it and get the information
+ also if required stop the container and delete it
