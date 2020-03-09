@@ -1,0 +1,87 @@
+<!--Authors : Nainil Patel & Khanh Nguyen-->
+
+#headerright{
+    
+    padding-left: 1180px;
+    color: white;
+    
+}
+.header{
+    background-color: #c2c2c2;
+    border-radius: 10px;
+}
+#option1{
+    margin-left: 20px;
+}
+#option2{
+    margin-left: 53px;
+}
+#lastname{
+    margin-left:43px;
+}
+#birthdate{
+    margin-left:45px;
+}
+#paywith{
+    padding-left:78px;
+}
+
+#state{
+    margin-left:42px;
+}
+
+#starttime{
+    margin-left:44px;
+}
+
+#endtime{
+    margin-left:48px;
+}
+
+#platenumber{
+    margin-left:24px;
+    padding-left:50px;
+}
+
+#number{
+    margin-left:55px;
+}
+#nameoncard{
+    margin-left: 12px;
+}
+#CVV{
+    margin-left: 73px;
+}
+#Expiration{
+    margin-left: 5px;
+}
+.form{
+    margin-top: 40px;
+    padding-left: 200px;
+}
+.form2{
+    margin-top: 40px;
+    padding-left: 50px;
+}
+input{
+    margin-left: 40px;
+}
+.label{
+    padding-left:50;
+}
+.rectangle1{
+    height: 225px;
+    width: 400px;
+    background-color: white;
+    margin-left:150px;
+    border-radius: 10px;
+}
+.rectangle2{
+    height: 700px;
+    width: 700px;
+    background-color:  #c2c2c2;
+    border-radius: 10px;
+}
+#submit{
+    margin-left: 325px;
+}

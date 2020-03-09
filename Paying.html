@@ -1,0 +1,94 @@
+<!--Authors : Nainil Patel & Khanh Nguyen-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/Paying.css">
+    <title>Paying</title>
+</head>
+<body>
+    <!--Header-->
+    <header class="header" >
+    <img src = "images/logo.png" alt="Logo" width="150" height="150">
+        <table id="headerright">
+            <thead>
+
+                <tr>
+                    <th><a href="#"> Account</a> &nbsp&nbsp</th>
+                    <th><a href="#"> Home</a>&nbsp&nbsp</th>
+                    <th><a href="#"> Log out </a></th>
+                </tr>
+            </thead>
+        </table>
+        <hr>
+    </header>
+    
+   <section>
+   		<h1> Make a Reservation </h1>
+   </section>
+
+    <section>
+        <form class="rectangle2">
+            <br>
+            <label class="form" for="Last Name">Last Name</label>
+            <input id="lastname" type="text" placeholder="Enter Last Name" required>
+            <br>
+            <br>
+            <label class="form" for="First Name">First Name</label>
+            <input  id="firstname" type="text" placeholder="Enter First Name" required>
+            <br>
+            <br>
+            <label class="form" for="Birth Date">Birth Date</label>
+            <input id="birthdate"type="text" placeholder="MM/DD/YY" required>
+            <br>
+            <br>
+            <label class="form" for="Plate Number">Plate Number</label>
+            <input id="platenumber"type="text" placeholder="(no spaces)" required>
+            <br>
+            <br>
+            <label class="form" for="State Code">State Code </label>
+            <input id="state" type="text" placeholder="ie. NJ" required>
+            <br>
+            <br>
+         	<label class="form" for="Reservation Start">Start Time </label>
+            <input id="starttime" type="text" placeholder="24-hour : minute" required>
+            <br>
+            <br>
+            <label class="form" for="Reservation End">End Time </label>
+            <input id="endtime" type="text" placeholder="24-hour : minute" required>
+            <br>
+            <br>
+            <div class="rectangle1">
+                <br>
+                <label id="paywith" for="Pay-with">Pay with</label>
+                <select id="option2">
+                        <option value="" disabled selected>Select</option>
+                        <option value="">Visa</option>
+                        <option value="">MasterCard</option>
+                </select>
+                <br>
+                <br>
+                <label class="form2" for="Number">Number</label>
+                <input id="number" type="text" placeholder="16 Digits" required>
+                <br>
+                <br>
+                <label class="form2" for="Name on Card">Name on Card</label>
+                <input id="nameoncard" type="text" placeholder="As it Appears" required>
+                <br>
+                <br>
+                <label class="form2" for="CVV">CVV</label>
+                <input id="CVV" type="password" placeholder="3 or 4 digits" required>
+                <br>
+                <br>
+                <label class="form2" for="Expiration Date">Expiration Date</label>
+                <input id="Expiration" placeholder="MM/YY" required>
+                    <h5>&nbsp&nbspCost : $10 per hour</h5>
+            </div>
+            <br>
+            <input id="submit" type="submit"  value="Submit">
+        </form>
+    </section>
+</body>
+</html>
